@@ -6,6 +6,7 @@ tags: [ruby]
 ---
 
 First, we will understand how the const_get method works then I will explain how we can use it in different ways and what are the use cases.
+<!--truncate-->
 
 ```ruby
 module Vehicle

@@ -7,6 +7,8 @@ tags: [rails]
 
 Today I attend Ruby Conference at Pune and Singleton method and metaclass in ruby was one of the talk discussed there So, I thought to write a blog about it.
 
+<!--truncate-->
+
 In ruby, we create the class and class has many methods written into it. When we create an object of the class we can access those methods using that object. So, the question raise in my mind was as follows.
 
 ### 1. Who holds these methods? does class hold these methods or each object of the class holds this methods? 

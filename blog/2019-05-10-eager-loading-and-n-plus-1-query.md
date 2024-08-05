@@ -8,6 +8,8 @@ tags: [rails, ruby]
 
 Sometimes, the implementation of an algorithm can make performance worst. Then it does not matter whether it has used the faster programming language like C or slower like Ruby. So we should implement the algorithms properly. Same while dealing with the database we should use proper queries so that the performance should not affect.
 
+<!--truncate-->
+
 ### Let's observe an example.
 
 ```ruby

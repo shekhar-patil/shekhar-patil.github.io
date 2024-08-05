@@ -7,6 +7,8 @@ tags: [javascipt]
 
 Yesterday, I was working on an issue in which database value for particular object attribute was correct but on UI it was showing the wrong value. I dig into the front-end Javascript code and I found that bug occurred while merging the two objects in Javascript. first, we will discuss how to merge two objects then I will explain what we should care about while merging two objects.
 
+<!--truncate-->
+
 ## How to merge objects?
 
 ### 1. Merge two objects having distinct attributes names.

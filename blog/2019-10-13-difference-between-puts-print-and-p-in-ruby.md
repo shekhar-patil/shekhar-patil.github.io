@@ -8,6 +8,8 @@ tags: [ruby]
 
 Ruby is developer friendly language and it provides many ways to perform same task. For example for printing the output on the console we can use puts, prints and p. But multiple ways to do same task means more confusion for selecting correct way for our use case. In this blog we will discuss about difference between puts, print and p so that we can select correct method as per our use case.
 
+<!--truncate-->
+
 #### Let's start with `hello world` using all of this.
 
 #### 1. Using `puts`.

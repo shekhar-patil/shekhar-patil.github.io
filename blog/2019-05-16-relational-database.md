@@ -8,6 +8,7 @@ tags: [mysql]
 
 In the internet era, every organization is storing large data and it is difficult to maintain this much data. There are different databases available but it is very difficult to select the best suitable for our requirement. Mainly databases are classified into Relational database and Non-relational database. 
 
+<!--truncate-->
 
 **Relational database:** It is also called SQL(Structured Query Language) database and it is a set of data organized by tables, records and columns.
 

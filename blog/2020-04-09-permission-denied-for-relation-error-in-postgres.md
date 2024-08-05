@@ -10,6 +10,8 @@ Have you ever faced the following issue while fetching records from Postgres in 
 
 **`ActiveRecord::StatementInvalid: PG::InsufficientPrivilege: ERROR:  permission denied for relation`**
 
+<!--truncate-->
+
 I had following configuration in my database.yml file
 
 ```

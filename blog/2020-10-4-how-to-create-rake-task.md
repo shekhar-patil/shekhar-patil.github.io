@@ -8,6 +8,8 @@ tags: [rails, ruby]
 # Introduction
 Sometimes, We need to have a task that can be executed at regular basic at some time. In ruby, we have a rake task to define and execute this task at any time.  We can use rake tasks in Rails for various purposes.
 
+<!--truncate-->
+
 Rake is inspired by Linux [make utility](https://en.wikipedia.org/wiki/Make_(software)). Its name comes from the `Ruby Make`. Rake is a task management utility that reads and executes the tasks defined in the ruby language in the 'Rakefile`. It was written by the late [Jim Weirich](https://en.wikipedia.org/wiki/Jim_Weirich).
 
 # How to create a Rake task.
