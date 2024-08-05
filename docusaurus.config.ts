@@ -66,13 +66,13 @@ const config: Config = {
       items: [
         {
           type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
+          sidebarId: 'golangSidebar',
           position: 'left',
           label: 'Golang',
         },
         {
           type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
+          sidebarId: 'dockerSidebar',
           position: 'left',
           label: 'Docker',
         },
