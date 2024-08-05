@@ -73,4 +73,4 @@ postgres=# ALTER USER root WITH SUPERUSER CREATEDB BYPASSRLS;
 you can read more about the Privileges in PostgreSQL [Here](https://www.digitalocean.com/docs/databases/postgresql/how-to/modify-user-privileges/).
 
 I hope it will solve your problem.
-If you still have a problem please feel free to contact me on [email](patilshekhar900@gmail.com) or [twitter](https://twitter.com/Shekharpatil95).
+If you still have a problem please feel free to contact me on [patilshekhar900@gmail.com](mailto:patilshekhar900@gmail.com) or [twitter](https://twitter.com/Shekharpatil95).
