@@ -2,46 +2,25 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# Introduction to Go
 
-Let's discover **Docusaurus in less than 5 minutes**.
+Welcome to the Go programming language documentation! Go, also known as Golang, is an open-source programming language designed for simplicity, reliability, and efficiency. It was created by Robert Griesemer, Rob Pike, and Ken Thompson at Google and first released in 2009.
+
+## Why Go?
+
+Go is known for several key features that make it a great choice for modern software development:
+
+- **Simplicity:** Go's syntax is clean and easy to understand, making it accessible for beginners while still being powerful for experienced developers.
+- **Performance:** Go is a compiled language that offers the performance of C or C++ with the simplicity of a high-level language.
+- **Concurrency:** Go has built-in support for concurrent programming with goroutines and channels, making it easy to build scalable and efficient applications.
+- **Standard Library:** Go comes with a rich standard library that provides many useful packages for a wide range of applications, from web development to cryptography.
+- **Tooling:** Go has excellent tooling, including a fast compiler, a powerful testing framework, and a built-in formatter that enforces a consistent code style.
 
 ## Getting Started
 
-Get started by **creating a new site**.
+To get started with Go, you'll need to install it on your machine. You can download the latest version of Go from the [official Go website](https://golang.org/). Follow the installation instructions for your operating system.
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+Once you have Go installed, you can verify your installation by opening a terminal and typing:
 
-### What you'll need
-
-- [Node.js](https://nodejs.org/en/download/) version 18.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
-
-## Generate a new site
-
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
-
-```bash
-npm init docusaurus@latest my-website classic
-```
-
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+```sh
+go version

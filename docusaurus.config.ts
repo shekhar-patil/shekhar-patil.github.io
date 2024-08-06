@@ -71,12 +71,12 @@ const config: Config = {
           position: 'left',
           label: 'Golang',
         },
-        {
-          type: 'docSidebar',
-          sidebarId: 'dockerSidebar',
-          position: 'left',
-          label: 'Docker',
-        },
+        // {
+        //   type: 'docSidebar',
+        //   sidebarId: 'dockerSidebar',
+        //   position: 'left',
+        //   label: 'Docker',
+        // },
         {
           to: '/blog', 
           label: 'Blog', 
@@ -94,10 +94,10 @@ const config: Config = {
         {
           title: 'Docs',
           items: [
-            {
-              label: 'Docker',
-              to: '/docs/docker/intro',
-            },
+            // {
+            //   label: 'Docker',
+            //   to: '/docs/docker/intro',
+            // },
             {
               label: 'Golang',
               to: '/docs/golang/intro'
@@ -108,12 +108,16 @@ const config: Config = {
           title: 'Community',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/users/7292776/shekhar-patil',
-            },
-            {
               label: 'Twitter',
               href: 'https://x.com/Shekharpatil95',
+            },
+            {
+              label: 'YouTube',
+              href: 'https://www.youtube.com/@shekharpatil5044',
+            },
+            {
+              label: 'Stack Overflow',
+              href: 'https://stackoverflow.com/users/7292776/shekhar-patil',
             },
           ],
         },
