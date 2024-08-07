@@ -1,54 +1,58 @@
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
+import Link from '@docusaurus/Link';
 import styles from './styles.module.css';
 
 type FeatureItem = {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
+  Img: string;
   description: JSX.Element;
+  link: string;
 };
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'Golang Docs',
+    Img: require('@site/static/img/docs.png').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Comprehensive documentation on Golang programming, covering various topics and best practices.
       </>
     ),
+    link: '/docs/golang/intro',
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'Blogs',
+    Img: require('@site/static/img/blog.jpg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Insightful blogs on web development, DevOps, and more. Stay updated with the latest trends and technologies.
       </>
     ),
+    link: '/blog',
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'Schedule Meeting',
+    Img: require('@site/static/img/meeting.jpg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Book a 1-1 meeting with me to discuss your projects, get mentorship, or ask for advice.
       </>
     ),
+    link: 'https://calendly.com/shekhar-patil',
   },
 ];
 
-function Feature({title, Svg, description}: FeatureItem) {
+function Feature({ title, Img, description, link }: FeatureItem) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
+        <img src={Img} className={styles.featureImg} alt={title} />
       </div>
       <div className="text--center padding-horiz--md">
-        <Heading as="h3">{title}</Heading>
+        <Heading as="h3">
+          <Link to={link}>{title}</Link>
+        </Heading>
         <p>{description}</p>
       </div>
     </div>

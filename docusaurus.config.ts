@@ -4,7 +4,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'Shekhar Patil',
-  tagline: 'Dinosaurs are cool',
+  tagline: 'Full Stack Developer',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -62,7 +62,7 @@ const config: Config = {
       title: 'Shekhar Patil',
       logo: {
         alt: 'Shekhar Patil Logo',
-        src: 'img/logo.svg',
+        src: 'img/profile.png',
       },
       items: [
         {

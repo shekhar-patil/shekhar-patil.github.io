@@ -16,13 +16,14 @@ function HomepageHeader() {
           {siteConfig.title}
         </Heading>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/golang/intro">
-            Docusaurus Tutorial - 5min ⏱️
-          </Link>
-        </div>
+        <img
+          src={require('@site/static/img/profile.png').default}
+          alt="Shekhar Patil"
+          className={styles.profilePhoto}
+        />
+        <p>
+          Experienced Web Developer with strong skills to develop real-world applications and frameworks, and provide data-oriented solutions.
+        </p>
       </div>
     </header>
   );

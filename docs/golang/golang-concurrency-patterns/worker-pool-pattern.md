@@ -122,7 +122,7 @@ func main() {
 	// Close results channel after all workers are done
 	close(workerPool.results)
 
-	// // Wait for all results to be collected
+	// Wait for all results to be collected
 	wg.Wait()
 }
 

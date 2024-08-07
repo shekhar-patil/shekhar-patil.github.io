@@ -1,11 +1,25 @@
+/* styles.module.css */
 .features {
   display: flex;
-  align-items: center;
-  padding: 2rem 0;
+  flex-direction: column;
+  padding: 6rem 0;
   width: 100%;
 }
 
-.featureSvg {
-  height: 200px;
-  width: 200px;
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensure contents are spaced evenly */
+  height: 100%; /* Ensure all columns take full available height */
+}
+
+.featureImg {
+  width: 100%;
+  max-height: 200px; /* Adjust as needed */
+  object-fit: cover; /* Ensure images cover the area without distortion */
 }
