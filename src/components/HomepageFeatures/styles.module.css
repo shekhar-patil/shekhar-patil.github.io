@@ -14,12 +14,26 @@
 .col {
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Ensure contents are spaced evenly */
-  height: 100%; /* Ensure all columns take full available height */
+  justify-content: space-between;
+  height: 100%;
+  padding: 0 1rem; /* Add some horizontal padding to avoid content touching edges */
 }
 
 .featureImg {
-  width: 100%;
-  max-height: 200px; /* Adjust as needed */
-  object-fit: cover; /* Ensure images cover the area without distortion */
+  width: 80%; /* Adjust the width to make the image smaller */
+  max-height: 150px; /* Reduce max height to make the image a bit smaller */
+  object-fit: cover;
+  margin-bottom: 1rem; /* Space between image and content below */
+}
+
+.text--center {
+  text-align: center;
+}
+
+.padding-horiz--md {
+  padding: 0 1rem; /* Add horizontal padding for spacing */
+}
+
+p {
+  margin: 0; /* Ensure paragraphs do not add extra space by default */
 }
