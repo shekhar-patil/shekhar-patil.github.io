@@ -5,7 +5,10 @@ sidebar_position: 1
 # Worker Pools
 
 ### What is worker pool pattern?
+
 The Worker Pool pattern is a concurrency pattern in Go that allows you to manage and control the number of goroutines working on a set of tasks. This pattern is particularly useful when you have a large number of tasks to process and want to limit the number of concurrent goroutines to prevent excessive resource usage.
+
+![Worker pool pattern](img/worker-pool-pattern.jpg)
 
 ### The basic flow of the worker pool pattern looks like this:
 
@@ -39,91 +42,98 @@ package main
 import (
 	"fmt"
 	"sync"
-	"time"
 )
 
 type Job struct {
 	Id    int
-	value int
+	Value int
+}
+
+type Result struct {
+	JobId int
+	Value int
 }
 
 type WorkerPool struct {
 	numJobs    int
 	numWorkers int
 	jobs       chan Job
-	results    chan int
-	wg         sync.WaitGroup
+	results    chan Result
+	wg         sync.WaitGroup // WaitGroup to track all worker goroutines
 }
 
-func newWorkerPool(numJobs int, numWorkers int) *WorkerPool {
-	return &WorkerPool{
-		numJobs:    numJobs,
-		numWorkers: numWorkers,
-		jobs:       make(chan Job, numJobs),
-		results:    make(chan int, numJobs),
+func (wp *WorkerPool) StartWorker(id int) {
+	defer wp.wg.Done()
+
+	for job := range wp.jobs {
+		fmt.Printf("Job %d processed by worker %d\n", job.Id, id)
+		wp.results <- Result{JobId: job.Id, Value: job.Value * 1}
 	}
 }
 
-func (workerPool *WorkerPool) startWorker() {
-	defer workerPool.wg.Done()
-
-	for job := range workerPool.jobs {
-		time.Sleep(time.Second) // Simulate work
-		workerPool.results <- job.value
+func (wp *WorkerPool) StartWorkers() {
+	for i := 0; i < wp.numWorkers; i++ {
+		wp.wg.Add(1)
+		go wp.StartWorker(i)
 	}
 }
 
-func (workerPool *WorkerPool) startWorkers() {
-	for i := 0; i < workerPool.numWorkers; i++ {
-		workerPool.wg.Add(1)
-		go workerPool.startWorker()
+func (wp *WorkerPool) SubmitJobs() {
+	for i := 0; i < wp.numJobs; i++ {
+		wp.jobs <- Job{Id: i, Value: i}
 	}
+	close(wp.jobs)
 }
 
-func (workerPool *WorkerPool) submitJobs() {
-	for i := 0; i < workerPool.numJobs; i++ {
-		workerPool.jobs <- Job{Id: i, value: i}
-	}
-
-	close(workerPool.jobs) // Close jobs channel to signal workers no more jobs
-}
-
-func (workerPool *WorkerPool) collectResult(wg *sync.WaitGroup) {
+func (wp *WorkerPool) PrintResults(wg *sync.WaitGroup) {
 	defer wg.Done()
-	for result := range workerPool.results {
-		fmt.Println(result)
+
+	for result := range wp.results {
+		fmt.Printf("Result: Job %d Value %d\n", result.JobId, result.Value)
 	}
 }
 
 func main() {
 	numJobs := 10
 	numWorkers := 3
+	var wg sync.WaitGroup // WaitGroup to track the results printer goroutine
 
-	var wg sync.WaitGroup
+	// Initialize the WorkerPool with job and result channels
+	wp := WorkerPool{
+		numJobs:    numJobs,
+		numWorkers: numWorkers,
+		jobs:       make(chan Job, numJobs),
+		results:    make(chan Result, numJobs),
+	}
 
-	// Create job and result channels
-	workerPool := newWorkerPool(numJobs, numWorkers)
+	// Start workers
+	wp.StartWorkers()
 
-	// Start the worker pool
-	workerPool.startWorkers()
-
-	// Submit jobs to workers
-	workerPool.submitJobs()
-
-	// Collect results
-	wg.Add(1)
+	// Submit jobs to the job channel
 	go func() {
-		workerPool.collectResult(&wg)
+		wp.SubmitJobs()
 	}()
 
-	// Wait for all workers to finish
-	workerPool.wg.Wait()
+	// Start the results printer goroutine
+	wg.Add(1)
+	go wp.PrintResults(&wg)
 
-	// Close results channel after all workers are done
-	close(workerPool.results)
+	// Wait for all worker goroutines to complete
+	wp.wg.Wait()
 
-	// Wait for all results to be collected
+	// Close the results channel once all workers are done
+	close(wp.results)
+
+	// Wait for the results printer to finish
 	wg.Wait()
 }
 
+
 ```
+
+We use two separate WaitGroups in this pattern: 
+
+1. **Worker WaitGroup**: Tracks when all worker goroutines have finished their tasks.
+2. **Results WaitGroup**: Ensures the results printing goroutine completes its work after all results are processed.
+
+This separation allows us to manage the lifecycle of workers and results printing independently, ensuring that all tasks are processed and printed correctly.
