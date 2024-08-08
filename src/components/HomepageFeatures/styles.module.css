@@ -8,7 +8,9 @@
 
 .row {
   display: flex;
+  flex-wrap: wrap; /* Allow rows to wrap on smaller screens */
   justify-content: space-between;
+  margin: 0 -0.5rem; /* Adjust margin to handle horizontal padding */
 }
 
 .col {
@@ -16,7 +18,9 @@
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  padding: 0 1rem; /* Add some horizontal padding to avoid content touching edges */
+  padding: 0 0.5rem; /* Add some horizontal padding to avoid content touching edges */
+  margin-bottom: 2rem; /* Add space between rows */
+  box-sizing: border-box; /* Ensure padding does not affect overall width */
 }
 
 .featureImg {
@@ -36,4 +40,22 @@
 
 p {
   margin: 0; /* Ensure paragraphs do not add extra space by default */
+}
+
+@media (max-width: 996px) {
+  .row {
+    flex-direction: column; /* Stack columns vertically on small screens */
+    margin: 0; /* Remove negative margin */
+  }
+
+  .col {
+    width: 100%; /* Make columns take full width on small screens */
+    padding: 1rem; /* Add padding for spacing */
+    margin-bottom: 3rem; /* Add space between rows */
+  }
+
+  .featureImg {
+    width: 100%; /* Make images take full width on small screens */
+    max-height: 200px; /* Adjust max height for better display on small screens */
+  }
 }
