@@ -29,6 +29,16 @@ const config: Config = {
     locales: ['en'],
   },
 
+  plugins: [
+    [
+      '@docusaurus/plugin-google-gtag',
+      {
+        trackingID: 'G-XXXXXXXXXX', // Replace with your Google Analytics 4 Tracking ID
+        anonymizeIP: true, // Optional: Anonymize the visitor's IP
+      },
+    ],
+  ],
+
   presets: [
     [
       'classic',
