@@ -3,6 +3,7 @@ slug: worker-pool-pattern
 title: Worker pool pattern in Golang
 authors: shekhar-patil
 tags: [golang, Design Pattern, Concurrency]
+image: "./worker-pool-pattern.jpg"
 ---
 
 ### What is worker pool pattern?
