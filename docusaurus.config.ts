@@ -8,7 +8,7 @@ const config: Config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://shekharpatil.vercel.app',
+  url: 'https://shekharpatil.tech',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -33,7 +33,7 @@ const config: Config = {
     [
       '@docusaurus/plugin-google-gtag',
       {
-        trackingID: 'G-XXXXXXXXXX', // Replace with your Google Analytics 4 Tracking ID
+        trackingID: 'G-EK3D72LLN9', // Replace with your Google Analytics 4 Tracking ID
         anonymizeIP: true, // Optional: Anonymize the visitor's IP
       },
     ],
