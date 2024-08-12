@@ -78,7 +78,7 @@ const config: Config = {
         {
           type: 'docSidebar',
           sidebarId: 'golangSidebar',
-          position: 'left',
+          position: 'right',
           label: 'Golang',
         },
         // {
@@ -90,7 +90,13 @@ const config: Config = {
         {
           to: '/blog', 
           label: 'Blog', 
-          position: 'left'},
+          position: 'right'
+        },
+        {
+          to: 'https://calendly.com/shekhar-patil', 
+          label: 'Schedule Meeting', 
+          position: 'right'
+        },
         {
           href: 'https://github.com/shekhar-patil',
           label: 'GitHub',
