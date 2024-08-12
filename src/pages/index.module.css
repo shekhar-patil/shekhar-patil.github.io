@@ -1,32 +1,49 @@
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
-
-.heroBanner {
-  padding: 4rem 0;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
+.welcomeSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 0;
 }
 
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
-  }
-}
-
-.buttons {
+.textContainer {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.profilePhoto {
-  border-radius: 50%;
-  width: 150px;
-  height: 150px;
-  display: block;
-  margin: 0 auto;
+.welcomeText {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: left;
+  line-height: 1.2;
 }
 
+.imageContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.svgImage {
+  width: 100%;
+  max-width: 400px;
+}
+
+@media only screen and (max-width: 768px) {
+  .welcomeSection {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .welcomeText {
+    font-size: 2rem;
+  }
+
+  .imageContainer {
+    margin-top: 1.5rem;
+  }
+
+  .svgImage {
+    max-width: 300px;
+  }
+}

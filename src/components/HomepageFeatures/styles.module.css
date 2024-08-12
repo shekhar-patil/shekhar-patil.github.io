@@ -1,61 +1,68 @@
-/* styles.module.css */
-.features {
+.welcomeSection {
   display: flex;
-  flex-direction: column;
-  padding: 6rem 0;
+  align-items: center;
+  justify-content: center; /* Center horizontally */
+  flex-direction: row; /* Side by side by default */
+  height: 95vh; /* Full viewport height */
+  padding: 2rem 0;
+  text-align: center; /* Center text */
+}
+
+.textContainer, .imageContainer {
+  flex: 1; /* Equal space for text and image containers */
+}
+
+.textContainer {
+  margin-right: 2rem; /* Space between text and image */
+}
+
+.welcomeText {
+  font-size: 4rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.shekharText {
+  color: #ff5722; /* Change this color to your preference */
+}
+
+.descriptionText {
+  font-size: 1.2rem; /* Smaller font size for description */
+  color: #666; /* Adjust color as needed */
+  margin-top: 0.5rem; /* Space between welcome text and description */
+}
+
+.imageContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pngImage {
   width: 100%;
+  max-width: 450px;
 }
 
-.row {
-  display: flex;
-  flex-wrap: wrap; /* Allow rows to wrap on smaller screens */
-  justify-content: space-between;
-  margin: 0 -0.5rem; /* Adjust margin to handle horizontal padding */
-}
-
-.col {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-  padding: 0 0.5rem; /* Add some horizontal padding to avoid content touching edges */
-  margin-bottom: 2rem; /* Add space between rows */
-  box-sizing: border-box; /* Ensure padding does not affect overall width */
-}
-
-.featureImg {
-  width: 80%; /* Adjust the width to make the image smaller */
-  max-height: 150px; /* Reduce max height to make the image a bit smaller */
-  object-fit: cover;
-  margin-bottom: 1rem; /* Space between image and content below */
-}
-
-.text--center {
-  text-align: center;
-}
-
-.padding-horiz--md {
-  padding: 0 1rem; /* Add horizontal padding for spacing */
-}
-
-p {
-  margin: 0; /* Ensure paragraphs do not add extra space by default */
-}
-
-@media (max-width: 996px) {
-  .row {
-    flex-direction: column; /* Stack columns vertically on small screens */
-    margin: 0; /* Remove negative margin */
+@media only screen and (max-width: 768px) {
+  .welcomeSection {
+    flex-direction: column; /* Stack vertically on smaller screens */
+    text-align: center; /* Center text */
   }
 
-  .col {
-    width: 100%; /* Make columns take full width on small screens */
-    padding: 1rem; /* Add padding for spacing */
-    margin-bottom: 3rem; /* Add space between rows */
+  .textContainer {
+    margin-right: 0; /* Remove right margin in column layout */
+    margin-bottom: 1.5rem; /* Space between text and image */
   }
 
-  .featureImg {
-    width: 100%; /* Make images take full width on small screens */
-    max-height: 200px; /* Adjust max height for better display on small screens */
+  .welcomeText {
+    font-size: 2.5rem;
+  }
+
+  .descriptionText {
+    font-size: 1rem; /* Adjust for smaller screens */
+  }
+
+  .pngImage {
+    max-width: 300px;
   }
 }
