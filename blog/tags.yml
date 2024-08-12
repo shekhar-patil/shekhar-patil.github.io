@@ -13,7 +13,7 @@ rails:
 system-design:
   label: System Design
   permalink: /system-design
-  description: system-design tag description
+  description: system-design 
 mysql:
   label: MySQL
   permalink: /mysql
