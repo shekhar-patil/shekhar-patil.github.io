@@ -51,7 +51,9 @@
 
   .textContainer {
     margin-right: 0; /* Remove right margin in column layout */
-    margin-bottom: 1.5rem; /* Space between text and image */
+    margin-bottom: 1rem; /* Reduce space between text and image */
+    text-align: center; /* Center text on smaller screens */
+    padding-top: 2rem; /* Increase space above text */
   }
 
   .welcomeText {
