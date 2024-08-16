@@ -139,118 +139,22 @@ In this example, the `Person` type implements the `Describer` interface because 
 
 In Go, when a variable is declared but not initialized, it is assigned a default value, known as the "zero value." The zero value is type-specific and represents the default initialization for that type. Here's a list of default values for the various data types in Go:
 
-### **Basic Types**
-- **Integer Types (e.g., `int`, `int8`, `uint32`, etc.)**
-  - Default value: `0`
-  
-  Example:
-  ```go
-  var x int  // x is 0
-  ```
+- **int, uint:** `0`
+- **float32, float64:** `0.0`
+- **complex64, complex128:** `0 + 0i`
+- **bool:** `false`
+- **string:** `""`
+- **pointer, slice, map, chan, func, interface:** `nil`
 
-- **Floating-Point Types (`float32`, `float64`)**
-  - Default value: `0.0`
-  
-  Example:
-  ```go
-  var pi float64  // pi is 0.0
-  ```
-
-- **Complex Types (`complex64`, `complex128`)**
-  - Default value: `0 + 0i`
-  
-  Example:
-  ```go
-  var c complex128  // c is 0 + 0i
-  ```
-
-- **Boolean (`bool`)**
-  - Default value: `false`
-  
-  Example:
-  ```go
-  var isActive bool  // isActive is false
-  ```
-
-- **String (`string`)**
-  - Default value: `""` (empty string)
-  
-  Example:
-  ```go
-  var name string  // name is ""
-  ```
-
-### **Aggregate Types**
-- **Array**
-  - Default value: Each element of the array is initialized to the zero value of the array's element type.
-  
-  Example:
-  ```go
-  var arr [3]int  // arr is [0, 0, 0]
-  ```
-
-- **Struct**
-  - Default value: Each field in the struct is initialized to the zero value of its respective type.
-  
-  Example:
-  ```go
-  type Person struct {
-      Name string
-      Age  int
-  }
-  var p Person  // p is Person{Name: "", Age: 0}
-  ```
-
-### **Reference Types**
-- **Pointer (`*T`)**
-  - Default value: `nil`
-  
-  Example:
-  ```go
-  var p *int  // p is nil
-  ```
-
-- **Slice (`[]T`)**
-  - Default value: `nil`
-  
-  Example:
-  ```go
-  var s []int  // s is nil
-  ```
-
-- **Map (`map[K]V`)**
-  - Default value: `nil`
-  
-  Example:
-  ```go
-  var m map[string]int  // m is nil
-  ```
-
-- **Channel (`chan T`)**
-  - Default value: `nil`
-  
-  Example:
-  ```go
-  var ch chan int  // ch is nil
-  ```
-
-- **Function (`func`)**
-  - Default value: `nil`
-  
-  Example:
-  ```go
-  var f func(int) int  // f is nil
-  ```
-
-### **Interface Types**
-- **Interface (`interface{}`)**
-  - Default value: `nil`
-  
-  Example:
-  ```go
-  var i interface{}  // i is nil
-  ```
-
+Examples:
+```go
+var x int        // x is 0
+var pi float64   // pi is 0.0
+var c complex128 // c is 0 + 0i
+var isActive bool // isActive is false
+var name string  // name is ""
+var p *int       // p is nil
+```
 These zero values ensure that variables have a well-defined value when they are declared but not explicitly initialized.
 
 We will cover many topics in coming tutorials. 
