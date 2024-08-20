@@ -4,6 +4,11 @@ title: Structures and Algorithms Roadmap
 description: Learn Data Structures and Algorithms with Shekhar Patil. 
 slug: roadmap
 image: "./img/dsa.png"
+authors:
+  name: Shekhar Patil
+  title: Full stack developer.
+  url: https://github.com/shekhar-patil
+  image_url: https://avatars.githubusercontent.com/u/16961675?s=400&u=70e54719e239d1148c24bc8661a72ee9e59f420d&v=4
 ---
 
 ![Data structures and Algorithms](img/dsa.png)
