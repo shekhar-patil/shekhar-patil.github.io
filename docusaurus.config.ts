@@ -81,6 +81,12 @@ const config: Config = {
           position: 'right',
           label: 'Golang',
         },
+        {
+          type: 'docSidebar',
+          sidebarId: 'dsaSidebar',
+          position: 'right',
+          label: 'DSA',
+        },
         // {
         //   type: 'docSidebar',
         //   sidebarId: 'dockerSidebar',

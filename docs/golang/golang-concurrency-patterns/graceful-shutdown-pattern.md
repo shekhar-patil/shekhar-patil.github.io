@@ -14,32 +14,32 @@ Here's a simple example demonstrating the graceful shutdown pattern in Go:
 package main
 
 import (
-	"fmt"
-	"time"
+    "fmt"
+    "time"
 )
 
 func performTask(terminateChan <-chan bool) {
-	for {
-		select {
-		case <-terminateChan:
-			fmt.Println("Task terminated by channel")
-			return
-		default:
-			fmt.Println("Task is running")
-			time.Sleep(time.Second)
-		}
-	}
+    for {
+        select {
+        case <-terminateChan:
+            fmt.Println("Task terminated by channel")
+            return
+        default:
+            fmt.Println("Task is running")
+            time.Sleep(time.Second)
+        }
+    }
 }
 
 func main() {
-	terminateChan := make(chan bool)
+    terminateChan := make(chan bool)
 
-	go performTask(terminateChan)
+    go performTask(terminateChan)
 
-	time.Sleep(5 * time.Second)
-	terminateChan <- true
-	time.Sleep(time.Second)
-	fmt.Println("Main Goroutine exited")
+    time.Sleep(5 * time.Second)
+    terminateChan <- true
+    time.Sleep(time.Second)
+    fmt.Println("Main Goroutine exited")
 }
 ```
 
@@ -50,16 +50,16 @@ The `performTask` function simulates a long-running task. It continuously prints
 
 ```go
 func performTask(terminateChan <-chan bool) {
-	for {
-		select {
-		case <-terminateChan:
-			fmt.Println("Task terminated by channel")
-			return
-		default:
-			fmt.Println("Task is running")
-			time.Sleep(time.Second)
-		}
-	}
+    for {
+        select {
+        case <-terminateChan:
+            fmt.Println("Task terminated by channel")
+            return
+        default:
+            fmt.Println("Task is running")
+            time.Sleep(time.Second)
+        }
+    }
 }
 ```
 
@@ -68,14 +68,14 @@ In the `main` function, a `terminateChan` channel is created to signal terminati
 
 ```go
 func main() {
-	terminateChan := make(chan bool)
+    terminateChan := make(chan bool)
 
-	go performTask(terminateChan)
+    go performTask(terminateChan)
 
-	time.Sleep(5 * time.Second)
-	terminateChan <- true
-	time.Sleep(time.Second)
-	fmt.Println("Main Goroutine exited")
+    time.Sleep(5 * time.Second)
+    terminateChan <- true
+    time.Sleep(time.Second)
+    fmt.Println("Main Goroutine exited")
 }
 ```
 
