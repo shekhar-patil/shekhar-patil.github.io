@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: Structures and Algorithms Roadmap
+title: Data Structures and Algorithms Roadmap
 description: Learn Data Structures and Algorithms with Shekhar Patil. 
 slug: dsa-roadmap
 image: "./img/dsa.png"
