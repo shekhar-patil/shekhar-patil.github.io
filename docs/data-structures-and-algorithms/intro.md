@@ -1,8 +1,11 @@
 ---
 sidebar_position: 1
+title: Roadmap
+slug: roadmap
+image: img/dsa.png
 ---
 
-![Data structure and Algorithms](img/dsa.png)
+![Data structures and Algorithms](img/dsa.png)
 
 # Data structure and Algorithms
 
