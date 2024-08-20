@@ -126,7 +126,7 @@ const config: Config = {
             },
             {
               label: 'Data Structure and Algorithms',
-              to: '/docs/dsa/intro'
+              to: '/docs/data-structure-and-algorithms/intro'
             }
           ],
         },

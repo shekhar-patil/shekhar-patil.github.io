@@ -2,6 +2,8 @@
 sidebar_position: 1
 ---
 
+![Data structure and Algorithms](img/dsa.png)
+
 # Data structure and Algorithms
 
 1. **Sorting Algorithms**:
