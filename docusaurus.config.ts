@@ -123,6 +123,10 @@ const config: Config = {
             {
               label: 'Golang',
               to: '/docs/golang/intro'
+            },
+            {
+              label: 'Data Structure and Algorithms',
+              to: '/docs/dsa/intro'
             }
           ],
         },
