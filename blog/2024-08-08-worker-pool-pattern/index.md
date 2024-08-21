@@ -20,122 +20,122 @@ The Worker Pool pattern is a concurrency pattern in Go that allows you to manage
 package main
 
 func main() {
-	numJobs := 10
-	numWorkers := 3
+    numJobs := 10
+    numWorkers := 3
 
 
-	// Create job and result channels
-	
-	// Start the worker pool
+    // Create job and result channels
 
-	// Submit jobs to workers
+    // Start the worker pool
 
-	// Collect results
+    // Submit jobs to workers
 
-	// Wait for all goroutines to finish
+    // Collect results
+
+    // Wait for all goroutines to finish
 }
 ```
 
 ### Here is the final code implementing the Worker Pool pattern:
 
-Collects results in a separate goroutine. 
+Collects results in a separate goroutine.
 
-```go 
+```go
 package main
 
 import (
-	"fmt"
-	"sync"
+    "fmt"
+    "sync"
 )
 
 type Job struct {
-	Id    int
-	Value int
+    Id    int
+    Value int
 }
 
 type Result struct {
-	JobId int
-	Value int
+    JobId int
+    Value int
 }
 
 type WorkerPool struct {
-	numJobs    int
-	numWorkers int
-	jobs       chan Job
-	results    chan Result
-	wg         sync.WaitGroup // WaitGroup to track all worker goroutines
+    numJobs    int
+    numWorkers int
+    jobs       chan Job
+    results    chan Result
+    wg         sync.WaitGroup // WaitGroup to track all worker goroutines
 }
 
 func (wp *WorkerPool) StartWorker(id int) {
-	defer wp.wg.Done()
+    defer wp.wg.Done()
 
-	for job := range wp.jobs {
-		fmt.Printf("Job %d processed by worker %d\n", job.Id, id)
-		wp.results <- Result{JobId: job.Id, Value: job.Value * 1}
-	}
+    for job := range wp.jobs {
+        fmt.Printf("Job %d processed by worker %d\n", job.Id, id)
+        wp.results <- Result{JobId: job.Id, Value: job.Value * 1}
+    }
 }
 
 func (wp *WorkerPool) StartWorkers() {
-	for i := 0; i < wp.numWorkers; i++ {
-		wp.wg.Add(1)
-		go wp.StartWorker(i)
-	}
+    for i := 0; i < wp.numWorkers; i++ {
+        wp.wg.Add(1)
+        go wp.StartWorker(i)
+    }
 }
 
 func (wp *WorkerPool) SubmitJobs() {
-	for i := 0; i < wp.numJobs; i++ {
-		wp.jobs <- Job{Id: i, Value: i}
-	}
-	close(wp.jobs)
+    for i := 0; i < wp.numJobs; i++ {
+        wp.jobs <- Job{Id: i, Value: i}
+    }
+    close(wp.jobs)
 }
 
 func (wp *WorkerPool) PrintResults(wg *sync.WaitGroup) {
-	defer wg.Done()
+    defer wg.Done()
 
-	for result := range wp.results {
-		fmt.Printf("Result: Job %d Value %d\n", result.JobId, result.Value)
-	}
+    for result := range wp.results {
+        fmt.Printf("Result: Job %d Value %d\n", result.JobId, result.Value)
+    }
 }
 
 func main() {
-	numJobs := 10
-	numWorkers := 3
-	var wg sync.WaitGroup // WaitGroup to track the results printer goroutine
+    numJobs := 10
+    numWorkers := 3
+    var wg sync.WaitGroup // WaitGroup to track the results printer goroutine
 
-	// Initialize the WorkerPool with job and result channels
-	wp := WorkerPool{
-		numJobs:    numJobs,
-		numWorkers: numWorkers,
-		jobs:       make(chan Job, numJobs),
-		results:    make(chan Result, numJobs),
-	}
+    // Initialize the WorkerPool with job and result channels
+    wp := WorkerPool{
+        numJobs:    numJobs,
+        numWorkers: numWorkers,
+        jobs:       make(chan Job, numJobs),
+        results:    make(chan Result, numJobs),
+    }
 
-	// Start workers
-	wp.StartWorkers()
+    // Start workers
+    wp.StartWorkers()
 
-	// Submit jobs to the job channel
-	go func() {
-		wp.SubmitJobs()
-	}()
+    // Submit jobs to the job channel
+    go func() {
+        wp.SubmitJobs()
+    }()
 
-	// Start the results printer goroutine
-	wg.Add(1)
-	go wp.PrintResults(&wg)
+    // Start the results printer goroutine
+    wg.Add(1)
+    go wp.PrintResults(&wg)
 
-	// Wait for all worker goroutines to complete
-	wp.wg.Wait()
+    // Wait for all worker goroutines to complete
+    wp.wg.Wait()
 
-	// Close the results channel once all workers are done
-	close(wp.results)
+    // Close the results channel once all workers are done
+    close(wp.results)
 
-	// Wait for the results printer to finish
-	wg.Wait()
+    // Wait for the results printer to finish
+    wg.Wait()
 }
 
 
 ```
 
-We use two separate WaitGroups in this pattern: 
+We use two separate WaitGroups in this pattern:
 
 1. **Worker WaitGroup**: Tracks when all worker goroutines have finished their tasks.
 2. **Results WaitGroup**: Ensures the results printing goroutine completes its work after all results are processed.
