@@ -1,9 +1,14 @@
 ---
 
-sidebar_position: 1
+sidebar_position: 2
 ---
 
 # Singly Linked List
+
+A Singly Linked List contains data and the address of the next node. This structure allows traversal only in the forward direction, with no ability to move backward.
+
+![Singly linked list](../../img/singly-linked-list.jpg)
+
 
 ```go
 package main

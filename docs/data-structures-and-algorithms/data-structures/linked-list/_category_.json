@@ -1,8 +1,8 @@
 {
-  "label": "Linked List",
+  "label": "Linked List Data Structure",
   "position": 1,
   "link": {
     "type": "generated-index",
-    "description": "Linked list"
+    "description": "Linked List types and it's implementation"
   }
 }
