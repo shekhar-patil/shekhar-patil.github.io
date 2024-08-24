@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 title: Data Structures and Algorithms Roadmap
-description: Learn Data Structures and Algorithms with Shekhar Patil. 
+description: Learn Data Structures and Algorithms with Shekhar Patil.
 slug: dsa-roadmap
 image: "./img/dsa.png"
 authors:
@@ -27,22 +27,23 @@ authors:
 
 2. **Data Structures**:
    - Arrays *(Coming Soon)*
-   - Linked Lists 
+   - [Linked Lists](data-structures/linked-list)
       - [Singly Linked Lists](data-structures/linked-list/singly-linked-list)
-      - Doubly Linked Lists *(Coming Soon)*
+      - [Doubly Linked Lists](data-structures/linked-list/doubly-linked-list)
+      - [Circular Linked Lists](data-structures/linked-list/circular-linked-list)
    - Stacks *(Coming Soon)*
    - Queues *(Coming Soon)*
-   - Trees 
+   - Trees
       - [General Trees](data-structures/tree/general-tree)
       - Binary Trees *(Coming Soon)*
       - Binary Search Trees *(Coming Soon)*
       - AVL Trees *(Coming Soon)*
       - Red-Black Trees *(Coming Soon)*
-   - Graphs 
+   - Graphs
       - Directed Graphs *(Coming Soon)*
       - Undirected Graphs *(Coming Soon)*
    - Hash Tables *(Coming Soon)*
-   - Heaps 
+   - Heaps
       - Min-Heap *(Coming Soon)*
       - Max-Heap *(Coming Soon)*
    - Trie *(Coming Soon)*
