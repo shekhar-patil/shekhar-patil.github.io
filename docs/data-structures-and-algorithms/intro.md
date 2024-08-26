@@ -31,7 +31,7 @@ authors:
       - [Singly Linked Lists](data-structures/linked-list/singly-linked-list)
       - [Doubly Linked Lists](data-structures/linked-list/doubly-linked-list)
       - [Circular Linked Lists](data-structures/linked-list/circular-linked-list)
-   - Stacks *(Coming Soon)*
+   - [Stacks](data-structures/stack)
    - Queues *(Coming Soon)*
    - Trees
       - [General Trees](data-structures/tree/general-tree)
