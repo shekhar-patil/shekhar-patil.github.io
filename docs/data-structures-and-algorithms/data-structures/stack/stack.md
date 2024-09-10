@@ -6,106 +6,9 @@ sidebar_position: 1
 
 # Stack
 
-```go
-package main
+I have implemented a stack in Golang using interfaces, which enhances its flexibility by allowing it to handle multiple data types. In Go, interfaces enable us to define methods without specifying the exact types. By leveraging this feature, I created a generic stack that can store elements of any type, from integers and strings to more complex data types like structs.
 
-import (
-  "fmt"
-)
-
-type Stack struct {
-  items []int
-}
-
-func (s *Stack) Push(item int) {
-  fmt.Println(item, " has been pushed")
-  s.items = append(s.items, item)
-}
-
-func (s *Stack) Pop() (int, error) {
-  length := len(s.items)
-  if length == 0 {
-    return 0, fmt.Errorf("stack is empty")
-  }
-
-  num := s.items[length-1]
-  s.items = s.items[:length-1]
-
-  return num, nil
-}
-
-func (s *Stack) Peek() (int, error) {
-  length := len(s.items)
-  if length == 0 {
-    return 0, fmt.Errorf("stack is empty")
-  }
-
-  num := s.items[length-1]
-  return num, nil
-}
-
-func NewStack() *Stack {
-  return &Stack{items: []int{}}
-}
-
-func main() {
-  s := NewStack()
-
-  s.Push(1)
-  s.Push(2)
-  s.Push(3)
-
-  if num, err := s.Peek(); err == nil {
-    fmt.Println("Top element is", num)
-  } else {
-    fmt.Println(err)
-  }
-
-  if num, err := s.Pop(); err == nil {
-    fmt.Println(num, "has been popped")
-  } else {
-    fmt.Println(err)
-  }
-
-  if num, err := s.Peek(); err == nil {
-    fmt.Println("Top element is", num)
-  } else {
-    fmt.Println(err)
-  }
-
-  if num, err := s.Pop(); err == nil {
-    fmt.Println(num, "has been popped")
-  } else {
-    fmt.Println(err)
-  }
-
-  if num, err := s.Peek(); err == nil {
-    fmt.Println("Top element is", num)
-  } else {
-    fmt.Println(err)
-  }
-
-  if num, err := s.Pop(); err == nil {
-    fmt.Println(num, "has been popped")
-  } else {
-    fmt.Println(err)
-  }
-
-  if num, err := s.Peek(); err == nil {
-    fmt.Println("Top element is", num)
-  } else {
-    fmt.Println(err)
-  }
-
-  if num, err := s.Peek(); err == nil {
-    fmt.Println("Top element is", num)
-  } else {
-    fmt.Println(err)
-  }
-}
-```
-
-Following approach is more generic.
+This approach eliminates the need for multiple stack implementations for different types. Instead, the interface based design abstracts the stack’s functionality, ensuring type safety while maintaining reusability. The stack methods such as `Push`, `Pop`, and `Peek` can be applied universally, providing a seamless and efficient solution for various use cases in Golang.
 
 ```go
 package main
@@ -115,38 +18,39 @@ import (
     "fmt"
 )
 
-// Stack defines the interface for stack operations
-type Stack interface {
-    Push(data int) error
-    Pop() (int, error)
-    Peek() (int, error)
+// Stack defines the interface for stack operations using generics
+type Stack[T any] interface {
+    Push(data T) error
+    Pop() (T, error)
+    Peek() (T, error)
     IsEmpty() bool
     Size() int
 }
 
-// IntStack is a concrete implementation of a stack for integers
-type IntStack struct {
-    items []int
+// GenericStack is a concrete implementation of a stack for any data type
+type GenericStack[T any] struct {
+    items []T
 }
 
-// NewIntStack creates and returns a new IntStack
-func NewIntStack() *IntStack {
-    return &IntStack{
-        items: []int{},
+// NewGenericStack creates and returns a new GenericStack
+func NewGenericStack[T any]() *GenericStack[T] {
+    return &GenericStack[T]{
+        items: []T{},
     }
 }
 
 // Push adds an item to the top of the stack
-func (s *IntStack) Push(data int) error {
+func (s *GenericStack[T]) Push(data T) error {
     s.items = append(s.items, data)
     fmt.Println("Item", data, "Pushed to stack")
     return nil
 }
 
 // Pop removes and returns the top item from the stack
-func (s *IntStack) Pop() (int, error) {
+func (s *GenericStack[T]) Pop() (T, error) {
     if s.IsEmpty() {
-        return 0, errors.New("pop failed: stack is empty")
+        var zeroValue T
+        return zeroValue, errors.New("pop failed: stack is empty")
     }
     item := s.items[len(s.items)-1]
     s.items = s.items[:len(s.items)-1]
@@ -155,9 +59,10 @@ func (s *IntStack) Pop() (int, error) {
 }
 
 // Peek returns the top item without removing it
-func (s *IntStack) Peek() (int, error) {
+func (s *GenericStack[T]) Peek() (T, error) {
     if s.IsEmpty() {
-        return 0, errors.New("peek failed: stack is empty")
+        var zeroValue T
+        return zeroValue, errors.New("peek failed: stack is empty")
     }
     item := s.items[len(s.items)-1]
     fmt.Println("Top item is:", item)
@@ -165,20 +70,22 @@ func (s *IntStack) Peek() (int, error) {
 }
 
 // IsEmpty checks if the stack is empty
-func (s *IntStack) IsEmpty() bool {
+func (s *GenericStack[T]) IsEmpty() bool {
     return len(s.items) == 0
 }
 
 // Size returns the number of items in the stack
-func (s *IntStack) Size() int {
+func (s *GenericStack[T]) Size() int {
     return len(s.items)
 }
 
-// stackOperations demonstrates using the stack interface with better error handling
-func stackOperations(s Stack) {
+// stackOperations demonstrates using the generic stack interface
+func stackOperations[T any](s Stack[T], data []T) {
     // Pushing items
-    if err := s.Push(10); err != nil {
-        fmt.Println("Error pushing to stack:", err)
+    for _, item := range data {
+        if err := s.Push(item); err != nil {
+            fmt.Println("Error pushing to stack:", err)
+        }
     }
 
     // Displaying the top item
@@ -187,8 +94,10 @@ func stackOperations(s Stack) {
     }
 
     // Popping items
-    if _, err := s.Pop(); err != nil {
-        fmt.Println(err)
+    for i := 0; i < len(data); i++ {
+        if _, err := s.Pop(); err != nil {
+            fmt.Println(err)
+        }
     }
 
     // Attempt to pop from an empty stack
@@ -198,11 +107,16 @@ func stackOperations(s Stack) {
 }
 
 func main() {
-    // Create a new stack
-    s := NewIntStack()
+    // Create a new stack for integers
+    s := NewGenericStack[int]()
+    stackOperations(s, []int{10, 20, 30})
 
-    // Perform stack operations
-    stackOperations(s)
+    // Create a new stack for strings
+    strStack := NewGenericStack[string]()
+    stackOperations(strStack, []string{"hello", "world"})
 }
 
+
 ```
+
+Happy Coding!
