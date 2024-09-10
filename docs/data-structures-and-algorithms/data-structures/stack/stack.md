@@ -6,6 +6,10 @@ sidebar_position: 1
 
 # Stack
 
+A Stack is a Last In, First Out (LIFO) data structure, meaning that the most recently added element is the first one to be removed.
+
+![Stack](../../img/stack.jpg)
+
 I have implemented a stack in Golang using interfaces, which enhances its flexibility by allowing it to handle multiple data types. In Go, interfaces enable us to define methods without specifying the exact types. By leveraging this feature, I created a generic stack that can store elements of any type, from integers and strings to more complex data types like structs.
 
 This approach eliminates the need for multiple stack implementations for different types. Instead, the interface based design abstracts the stack’s functionality, ensuring type safety while maintaining reusability. The stack methods such as `Push`, `Pop`, and `Peek` can be applied universally, providing a seamless and efficient solution for various use cases in Golang.
