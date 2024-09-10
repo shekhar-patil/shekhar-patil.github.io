@@ -5,7 +5,7 @@ image: "../../img/stack.jpg"
 
 ---
 
-# Stack
+# Stack in Golang
 
 A Stack is a Last In, First Out (LIFO) data structure, meaning that the most recently added element is the first one to be removed.
 
