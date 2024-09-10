@@ -29,19 +29,19 @@ There are three primary types of linked lists:
 
 A Singly Linked List is a linear data structure where each node contains a piece of data and a reference to the next node in the list. The traversal is unidirectional, starting from the Head and moving towards the Tail. Once you reach the Tail, the traversal ends as the next reference points to `NULL`.
 
-![Singly linked list](../../img/singly-linked-list.jpg)
+![Singly linked list](img/singly-linked-list.jpg)
 
 ### Doubly Linked List
 
 In a Doubly Linked List, each node contains data, a pointer to the next node, and a pointer to the previous node. This structure allows traversal in both forward and backward directions, making it easier to navigate and manipulate the list from any given node.
 
-![Doubly linked list](../../img/doubly-linked-list.jpg)
+![Doubly linked list](img/doubly-linked-list.jpg)
 
 ### Circular Linked List
 
 A Circular Linked List differs from the other types by connecting the Tail node back to the Head node, forming a circular loop. This structure can be implemented as either a singly or doubly linked list. Circular Linked Lists are particularly useful in scenarios where the list needs to be looped through repeatedly without requiring a reset to the Head.
 
-![Circular linked list](../../img/circular-linked-list.jpg)
+![Circular linked list](img/circular-linked-list.jpg)
 
 ---
 

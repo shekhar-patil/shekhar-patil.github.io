@@ -8,7 +8,7 @@ sidebar_position: 3
 
 A Doubly Linked List is a more sophisticated data structure compared to a Singly Linked List. In a Doubly Linked List, each node contains three fields: data, a pointer to the next node, and a pointer to the previous node. This structure allows for traversal in both directions—from the head (the first node) to the tail (the last node), and vice versa.
 
-![Doubly linked list](../../img/doubly-linked-list.jpg)
+![Doubly linked list](img/doubly-linked-list.jpg)
 
 ### Structure of a Doubly Linked List
 
