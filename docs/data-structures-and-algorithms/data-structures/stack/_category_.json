@@ -1,6 +1,8 @@
 {
   "label": "Stack Data Structure",
   "position": 1,
+  "collapsible": true,
+  "collapsed": false,
   "link": {
     "type": "generated-index",
     "description": "Stack and it's implementation"

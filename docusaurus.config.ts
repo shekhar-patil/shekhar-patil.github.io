@@ -9,21 +9,14 @@ const config: Config = {
 
   // Set the production url of your site here
   url: 'https://shekharpatil.tech',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'Shekhar Patil', // Usually your GitHub org/user name.
-  projectName: 'my-website', // Usually your repo name.
+  organizationName: 'Shekhar Patil',
+  projectName: 'my-website',
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -33,8 +26,8 @@ const config: Config = {
     [
       '@docusaurus/plugin-google-gtag',
       {
-        trackingID: 'G-EK3D72LLN9', // Replace with your Google Analytics 4 Tracking ID
-        anonymizeIP: true, // Optional: Anonymize the visitor's IP
+        trackingID: 'G-EK3D72LLN9',
+        anonymizeIP: true,
       },
     ],
   ],
@@ -45,19 +38,15 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          // editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
+
         blog: {
           showReadingTime: true,
           blogSidebarCount: 'ALL',
           blogSidebarTitle: 'All our blogs',
           postsPerPage: 5,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          // editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
+
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -66,8 +55,6 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // Replace with your project's social card
-    // image: 'img/docusaurus-social-card.jpg',
     navbar: {
       title: 'Shekhar Patil',
       logo: {
@@ -87,21 +74,15 @@ const config: Config = {
           position: 'right',
           label: 'DSA',
         },
-        // {
-        //   type: 'docSidebar',
-        //   sidebarId: 'dockerSidebar',
-        //   position: 'left',
-        //   label: 'Docker',
-        // },
         {
-          to: '/blog', 
-          label: 'Blog', 
-          position: 'right'
+          to: '/blog',
+          label: 'Blog',
+          position: 'right',
         },
         {
-          to: 'https://calendly.com/shekhar-patil', 
-          label: 'Schedule Meeting', 
-          position: 'right'
+          to: 'https://calendly.com/shekhar-patil',
+          label: 'Schedule Meeting',
+          position: 'right',
         },
         {
           href: 'https://github.com/shekhar-patil',
@@ -110,24 +91,21 @@ const config: Config = {
         },
       ],
     },
+
     footer: {
       style: 'dark',
       links: [
         {
           title: 'Docs',
           items: [
-            // {
-            //   label: 'Docker',
-            //   to: '/docs/docker/intro',
-            // },
             {
               label: 'Golang',
-              to: '/docs/golang/intro'
+              to: '/docs/golang/intro',
             },
             {
               label: 'Data Structure and Algorithms',
-              to: '/docs/data-structures-and-algorithms/dsa-roadmap'
-            }
+              to: '/docs/data-structures-and-algorithms/dsa-roadmap',
+            },
           ],
         },
         {
@@ -163,11 +141,18 @@ const config: Config = {
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Shekhar Patil`,
     },
+
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
     },
-  } satisfies Preset.ThemeConfig,
+
+    docs: {
+      sidebar: {
+        autoCollapseCategories: false,
+      },
+    },
+  },
 };
 
 export default config;

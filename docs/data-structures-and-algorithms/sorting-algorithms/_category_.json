@@ -1,6 +1,8 @@
 {
   "label": "Sorting Algorithms",
   "position": 1,
+  "collapsible": true,
+  "collapsed": false,
   "link": {
     "type": "generated-index",
     "description": "Sorting Algorithms"

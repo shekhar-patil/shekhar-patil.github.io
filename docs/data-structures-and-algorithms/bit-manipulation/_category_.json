@@ -1,6 +1,8 @@
 {
   "label": "Bit Manipulation",
   "position": 7,
+  "collapsible": true,
+  "collapsed": false,
   "link": {
     "type": "generated-index",
     "description": "Bit Manipulation."

@@ -1,6 +1,8 @@
 {
   "label": "Dynamic Programming",
   "position": 5,
+  "collapsible": true,
+  "collapsed": false,
   "link": {
     "type": "generated-index",
     "description": "Dynamic Programming"
