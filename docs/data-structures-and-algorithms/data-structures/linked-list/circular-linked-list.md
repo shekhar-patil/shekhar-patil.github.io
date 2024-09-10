@@ -8,7 +8,7 @@ sidebar_position: 4
 
 A Circular Linked List is a variation of the linked list where the last node's pointer points back to the first node, creating a circular structure. This unique arrangement allows continuous traversal of the list, either in one direction (for singly linked lists) or in both directions (for doubly linked lists).
 
-![Circular linked list](img/circular-linked-list.jpg)
+![Circular linked list](./img/circular-linked-list.jpg)
 
 ### Types of Circular Linked Lists
 

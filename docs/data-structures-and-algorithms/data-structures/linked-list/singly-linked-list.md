@@ -8,7 +8,7 @@ sidebar_position: 2
 
 A Singly Linked List is a fundamental data structure where each node contains two fields: data and a pointer to the next node in the sequence. This structure allows for traversal in a single direction—from the head (the first node) to the tail (the last node)—but does not permit backward traversal.
 
-![Singly linked list](img/singly-linked-list.jpg)
+![Singly linked list](./img/singly-linked-list.jpg)
 
 ### Structure of a Singly Linked List
 
