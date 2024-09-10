@@ -1,6 +1,7 @@
 ---
 
 sidebar_position: 1
+image: "../../img/stack.jpg"
 
 ---
 
