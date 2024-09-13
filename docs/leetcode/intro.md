@@ -2,7 +2,6 @@
 sidebar_position: 1
 title: LeetCode Solutions
 description: LeetCode Problem Solutions
-slug: leetcode
 authors:
   name: Shekhar Patil
   title: Full stack developer.
