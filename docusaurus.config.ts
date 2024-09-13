@@ -80,6 +80,12 @@ const config: Config = {
           position: 'right',
         },
         {
+            type: 'docSidebar',
+            sidebarId: 'leetcodeSidebar',
+            position: 'right',
+            label: 'LeetCode Solutions',
+        },
+        {
           to: 'https://calendly.com/shekhar-patil',
           label: 'Schedule Meeting',
           position: 'right',
@@ -105,6 +111,10 @@ const config: Config = {
             {
               label: 'Data Structure and Algorithms',
               to: '/docs/data-structures-and-algorithms/dsa-roadmap',
+            },
+            {
+                label: 'LeetCode Solutions',
+                to: '/docs/leetcode/intro',
             },
           ],
         },

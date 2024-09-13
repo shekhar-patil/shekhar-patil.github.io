@@ -4,7 +4,37 @@ sidebar_position: 4
 
 # Generics
 
+### Introduction
+
 Generics in golang allows you to write flexible and reusable code which can handle multiple data type without compromising the type safety.
+
+
+### Examples
+Here's a simple example of Generic
+
+```go
+package main
+
+import "fmt"
+
+type Num interface {
+    int | float64
+}
+
+func Add[T Num](a T, b T) T {
+    return a + b
+}
+
+func main() {
+    intResult := Add(3, 4)
+    fmt.Println(intResult)
+
+    floatResult := Add(3.2, 4.2)
+    fmt.Println(floatResult)
+}
+
+```
+
 
 Here’s a practical example of generics in action in Go.
 

@@ -1,5 +1,12 @@
 ---
 sidebar_position: 1
+title: Go programming language documentation
+description: Golang, is an open-source programming language designed for simplicity, reliability, and efficiency. It was created by Robert Griesemer, Rob Pike, and Ken Thompson at Google and first released in 2009
+authors:
+  name: Shekhar Patil
+  title: Full stack developer.
+  url: https://github.com/shekhar-patil
+  image_url: https://avatars.githubusercontent.com/u/16961675?s=400&u=70e54719e239d1148c24bc8661a72ee9e59f420d&v=4
 ---
 
 # Introduction to Go

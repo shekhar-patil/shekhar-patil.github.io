@@ -1,0 +1,10 @@
+{
+    "label": "LeetCode Solutions",
+    "position": 2,
+    "collapsible": true,
+    "collapsed": false,
+    "link": {
+      "type": "generated-index",
+      "description": "It includes fundamental Golang syntax along with useful examples."
+    }
+  }
