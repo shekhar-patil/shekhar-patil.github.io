@@ -54,6 +54,16 @@ const config: Config = {
     ],
   ],
 
+  headTags: [
+    {
+        tagName: 'meta',
+        attributes: {
+          name: 'google-adsense-account',
+          content: 'ca-pub-2169425539769559',
+        },
+      },
+  ],
+
   themeConfig: {
     navbar: {
       title: 'Shekhar Patil',
