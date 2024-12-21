@@ -57,7 +57,9 @@ authors:
 4. **Graph Algorithms**:
    - Depth-First Search (DFS) *(Coming Soon)*
    - Breadth-First Search (BFS) *(Coming Soon)*
-   - Shortest Path Algorithms (Dijkstra's, Bellman-Ford) *(Coming Soon)*
+   - Shortest Path Algorithms
+      - [Dijkstra's Algorithm](data-structures/graph-algorithms-dijkstra-algorithm)
+      - Bellman-Ford Algorithm *(Coming Soon)*
    - Minimum Spanning Tree Algorithms (Prim's, Kruskal's) *(Coming Soon)*
 
 5. **Dynamic Programming**:
