@@ -89,12 +89,6 @@ const config: Config = {
           label: 'Blog',
           position: 'right',
         },
-        // {
-        //     type: 'docSidebar',
-        //     sidebarId: 'leetcodeSidebar',
-        //     position: 'right',
-        //     label: 'LeetCode Solutions',
-        // },
         {
           to: 'https://calendly.com/shekhar-patil',
           label: 'Schedule Meeting',
