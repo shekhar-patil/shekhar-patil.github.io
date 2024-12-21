@@ -2,7 +2,7 @@
 
 sidebar_position: 1
 ---
-# Dijkstra Algorithm
+# Dijkstra's Algorithm
 
 ```go
 package main
