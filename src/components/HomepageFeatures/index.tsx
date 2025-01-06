@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import styles from './styles.module.css'; 
+import styles from './styles.module.css';
 import pngImage from '@site/static/img/dashboard.png';
 
 export default function HomepageFeatures() {

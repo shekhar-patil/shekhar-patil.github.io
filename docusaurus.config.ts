@@ -126,12 +126,16 @@ const config: Config = {
           title: 'Community',
           items: [
             {
+                label: 'LinkedIn',
+                href: 'https://www.linkedin.com/in/shekhar-patil-834462135/',
+             },
+            {
               label: 'Twitter',
               href: 'https://x.com/Shekharpatil95',
             },
             {
               label: 'YouTube',
-              href: 'https://www.youtube.com/@shekharpatil5044',
+              href: 'https://www.youtube.com/@shekharpatil02',
             },
             {
               label: 'Stack Overflow',
