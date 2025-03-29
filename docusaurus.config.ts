@@ -73,6 +73,11 @@ const config: Config = {
       },
       items: [
         {
+          to: '/about',
+          label: 'About',
+          position: 'right',
+        },
+        {
           type: 'docSidebar',
           sidebarId: 'golangSidebar',
           position: 'right',
