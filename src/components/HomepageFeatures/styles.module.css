@@ -1,70 +1,170 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  margin-bottom: 6rem;
+}
+
 .welcomeSection {
   display: flex;
   align-items: center;
-  justify-content: center; /* Center horizontally */
-  flex-direction: row; /* Side by side by default */
-  height: 95vh; /* Full viewport height */
-  padding: 2rem 0;
-  text-align: center; /* Center text */
-}
-
-.textContainer, .imageContainer {
-  flex: 1; /* Equal space for text and image containers */
+  gap: 2rem;
+  padding: 4rem 0;
+  min-height: 90vh;
+  justify-content: center;
 }
 
 .textContainer {
-  margin-right: 2rem; /* Space between text and image */
+  flex: 1;
+  max-width: 600px;
 }
 
 .welcomeText {
   font-size: 4rem;
-  font-weight: bold;
+  margin-bottom: 1.5rem;
   line-height: 1.2;
 }
 
 .shekharText {
-  color: #ff5722; /* Change this color to your preference */
+  color: #ff5722;
 }
 
 .descriptionText {
-  font-size: 1.2rem; /* Smaller font size for description */
-  color: #666; /* Adjust color as needed */
-  margin-top: 0.5rem; /* Space between welcome text and description */
+  font-size: 1.6rem;
+  color: var(--ifm-color-emphasis-700);
 }
 
 .imageContainer {
+  flex: 1;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  max-width: 500px;
 }
 
 .pngImage {
-  width: 100%;
-  max-width: 450px;
+  max-width: 100%;
+  height: auto;
 }
 
-@media only screen and (max-width: 768px) {
+.quickLinksSection {
+  padding: 4rem 2rem;
+  background: var(--ifm-background-surface-color);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-top: 2rem;
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sectionTitle {
+  text-align: center;
+  color: var(--ifm-color-primary);
+  font-size: 2.4rem;
+  margin-bottom: 3.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--ifm-color-primary);
+}
+
+.quickLinksGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.quickLinkCard {
+  background: var(--ifm-background-color);
+  padding: 2.5rem;
+  border-radius: 12px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.quickLinkCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  border-color: var(--ifm-color-primary);
+  text-decoration: none;
+}
+
+.cardIcon {
+  font-size: 2.8rem;
+  margin-bottom: 1.2rem;
+}
+
+.quickLinkCard h3 {
+  color: var(--ifm-color-primary);
+  margin: 0 0 0.8rem 0;
+  font-size: 1.5rem;
+}
+
+.quickLinkCard p {
+  margin: 0;
+  color: var(--ifm-color-emphasis-700);
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
   .welcomeSection {
-    flex-direction: column; /* Stack vertically on smaller screens */
-    text-align: center; /* Center text */
+    flex-direction: column;
+    text-align: center;
+    padding: 3rem 0;
+    min-height: auto;
   }
 
   .textContainer {
-    margin-right: 0; /* Remove right margin in column layout */
-    margin-bottom: 1rem; /* Reduce space between text and image */
-    text-align: center; /* Center text on smaller screens */
-    padding-top: 2rem; /* Increase space above text */
+    max-width: 100%;
   }
 
   .welcomeText {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
   }
 
   .descriptionText {
-    font-size: 1rem; /* Adjust for smaller screens */
+    font-size: 1.2rem;
   }
 
-  .pngImage {
-    max-width: 300px;
+  .imageContainer {
+    max-width: 100%;
+  }
+
+  .quickLinksSection {
+    padding: 3rem 1rem;
+    margin-top: 1rem;
+  }
+
+  .quickLinksGrid {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+    gap: 2rem;
+  }
+
+  .quickLinkCard {
+    padding: 2rem;
   }
 }
