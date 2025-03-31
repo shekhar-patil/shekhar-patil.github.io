@@ -3,8 +3,8 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'Shekhar Patil',
-  tagline: 'Full Stack Developer',
+  title: 'Shekhar Patil - Full Stack Developer & Tech Educator',
+  tagline: 'Full Stack Developer specializing in Ruby, Rails, Golang, and Cloud Technologies. Sharing knowledge through tutorials, blogs, and open source contributions.',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -30,6 +30,13 @@ const config: Config = {
         anonymizeIP: true,
       },
     ],
+    [
+      '@docusaurus/plugin-sitemap',
+      {
+        changefreq: 'weekly',
+        priority: 0.5,
+      },
+    ],
   ],
 
   presets: [
@@ -45,6 +52,7 @@ const config: Config = {
           blogSidebarCount: 'ALL',
           blogSidebarTitle: 'All our blogs',
           postsPerPage: 5,
+          onUntruncatedBlogPosts: 'ignore',
         },
 
         theme: {
@@ -56,15 +64,120 @@ const config: Config = {
 
   headTags: [
     {
-        tagName: 'meta',
-        attributes: {
-          name: 'google-adsense-account',
-          content: 'ca-pub-2169425539769559',
-        },
+      tagName: 'meta',
+      attributes: {
+        name: 'google-adsense-account',
+        content: 'ca-pub-2169425539769559',
       },
+    },
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'description',
+        content: 'Shekhar Patil - Full Stack Developer specializing in Ruby, Rails, Golang, and Cloud Technologies. Sharing knowledge through tutorials, blogs, and open source contributions.',
+      },
+    },
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'keywords',
+        content: 'Full Stack Developer, Ruby on Rails, Golang, Docker, Kubernetes, GCP, Open Source, Tech Blog, Programming Tutorials',
+      },
+    },
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'author',
+        content: 'Shekhar Patil',
+      },
+    },
+    {
+      tagName: 'meta',
+      attributes: {
+        property: 'og:title',
+        content: 'Shekhar Patil - Full Stack Developer & Tech Educator',
+      },
+    },
+    {
+      tagName: 'meta',
+      attributes: {
+        property: 'og:description',
+        content: 'Full Stack Developer specializing in Ruby, Rails, Golang, and Cloud Technologies. Sharing knowledge through tutorials, blogs, and open source contributions.',
+      },
+    },
+    {
+      tagName: 'meta',
+      attributes: {
+        property: 'og:image',
+        content: 'https://shekharpatil.tech/img/profile.png',
+      },
+    },
+    {
+      tagName: 'meta',
+      attributes: {
+        property: 'og:url',
+        content: 'https://shekharpatil.tech',
+      },
+    },
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'twitter:card',
+        content: 'summary_large_image',
+      },
+    },
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'twitter:title',
+        content: 'Shekhar Patil - Full Stack Developer & Tech Educator',
+      },
+    },
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'twitter:description',
+        content: 'Full Stack Developer specializing in Ruby, Rails, Golang, and Cloud Technologies. Sharing knowledge through tutorials, blogs, and open source contributions.',
+      },
+    },
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'twitter:image',
+        content: 'https://shekharpatil.tech/img/profile.png',
+      },
+    },
+    {
+      tagName: 'script',
+      attributes: {
+        type: 'application/ld+json',
+      },
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Person',
+        name: 'Shekhar Patil',
+        url: 'https://shekharpatil.tech',
+        image: 'https://shekharpatil.tech/img/profile.png',
+        sameAs: [
+          'https://github.com/shekhar-patil',
+          'https://www.linkedin.com/in/shekhar-patil-834462135/',
+          'https://x.com/Shekharpatil95',
+          'https://www.youtube.com/@shekharpatil02',
+          'https://stackoverflow.com/users/7292776/shekhar-patil'
+        ],
+        jobTitle: 'Full Stack Developer',
+        worksFor: {
+          '@type': 'Organization',
+          name: 'Self Employed'
+        }
+      }),
+    },
   ],
 
   themeConfig: {
+    metadata: [
+      {name: 'keywords', content: 'Full Stack Developer, Ruby on Rails, Golang, Docker, Kubernetes, GCP, Open Source, Tech Blog, Programming Tutorials'},
+    ],
     navbar: {
       title: 'Shekhar Patil',
       logo: {
@@ -72,6 +185,12 @@ const config: Config = {
         src: 'img/profile.png',
       },
       items: [
+        {
+          to: '/',
+          label: 'Home',
+          position: 'right',
+          activeBaseRegex: '^/$',
+        },
         {
           to: '/about',
           label: 'About',
@@ -97,11 +216,6 @@ const config: Config = {
         {
           to: 'https://calendly.com/shekhar-patil',
           label: 'Schedule Meeting',
-          position: 'right',
-        },
-        {
-          href: 'https://github.com/shekhar-patil',
-          label: 'GitHub',
           position: 'right',
         },
       ],
