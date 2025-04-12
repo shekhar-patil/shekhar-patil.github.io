@@ -35,6 +35,7 @@ const config: Config = {
       {
         changefreq: 'weekly',
         priority: 0.5,
+        id: 'sitemap',
       },
     ],
   ],
