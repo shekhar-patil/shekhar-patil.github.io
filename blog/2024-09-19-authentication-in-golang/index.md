@@ -3,6 +3,7 @@ slug: authentication-in-golang
 title: How to implement authentication and authorization in Golang
 authors: shekhar-patil
 tags: [golang, go-jwt, web-application]
+draft: true
 ---
 
 
