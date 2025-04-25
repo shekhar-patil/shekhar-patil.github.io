@@ -15,7 +15,15 @@ This post is about my experience interviewing at Google. I made it to the final 
 
 ## How It Started
 
-I applied through the [Google Careers](https://careers.google.com/) page. This time, instead of the usual rejection email, I got a call from a Google recruiter — a promising start.
+I applied through the [Google Careers](https://careers.google.com/) page around mid-November 2024.. This time, instead of the usual rejection email, I got a call from a Google recruiter — a promising start. He scheduled first Screening Call.
+
+## Initial HR Round: The Screening Call
+
+The recruiter asked about my education, experience, projects, the tech I’ve worked with, and the scale of systems I’ve built. It was a standard screening call—until they asked:
+
+"Have you done any competitive programming?"
+
+At the time, I had solved around 90 problems on LeetCode, mostly Easy and Medium. I was honest and asked for a month to prepare before the next step.
 
 The recruiter asked about my education, experience, projects, the tech I’ve worked with, and the scale of systems I’ve built. It was a standard screening call—until they asked:
 
@@ -87,11 +95,13 @@ I made mistakes in the beginning, and it took me about **35 minutes** to get the
 
 ## The Result
 
+I had mixed feelings—both excited and nervous. It had been almost three months of continuous effort, and I was very close to the final stage. The next round was the Googliness interview, which is mostly a behavioral round, and many people usually clear it without much trouble.
+
 Two weeks later, the recruiter called and said:
 
-> "We won’t be moving forward. The feedback mentioned that you should use more optimal data structures, and your problem-solving speed needs improvement. But feel free to reapply after a year."
+“We won’t be moving forward. The feedback mentioned that you should use more optimal data structures, and your problem-solving speed needs improvement. But feel free to reapply after a year.”
 
-It was disappointing—but I didn’t see it as a failure. Here's why.
+It was disappointing to hear, especially after coming so far. But I didn’t see it as a failure. Here’s why.
 
 ---
 
