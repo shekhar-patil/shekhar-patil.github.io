@@ -3,6 +3,7 @@ slug: google-interview
 title: Failing Google’s Final Round — What I Learned
 authors: shekhar-patil
 tags: [interview, google]
+image: "./google.webp"
 ---
 
 ![Google Interview](./google.webp)
