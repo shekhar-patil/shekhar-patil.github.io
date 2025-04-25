@@ -154,6 +154,3 @@ If you're preparing for Google or any FAANG interview, check out my:
 
 Not getting into Google stung—but the journey changed me. I learned more in three months than I had in the past year. If you’re going through something similar, just know this: you’re not alone, and every setback is a setup for growth.
 
----
-
-Let me know if you want a tweet-sized summary or LinkedIn version to promote the blog!
