@@ -3,7 +3,7 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'Shekhar Patil - Full Stack Developer & Tech Educator',
+  title: 'Shekhar Patil - Full Stack Developer',
   tagline: 'Full Stack Developer specializing in Ruby, Rails, Golang, and Cloud Technologies. Sharing knowledge through tutorials, blogs, and open source contributions.',
   favicon: 'img/favicon.ico',
 
