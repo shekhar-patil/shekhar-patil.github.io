@@ -21,12 +21,6 @@ I applied through the [Google Careers](https://careers.google.com/) page around 
 
 The recruiter asked about my education, experience, projects, the tech I’ve worked with, and the scale of systems I’ve built. It was a standard screening call—until they asked:
 
-"Have you done any competitive programming?"
-
-At the time, I had solved around 90 problems on LeetCode, mostly Easy and Medium. I was honest and asked for a month to prepare before the next step.
-
-The recruiter asked about my education, experience, projects, the tech I’ve worked with, and the scale of systems I’ve built. It was a standard screening call—until they asked:
-
 **"Have you done any competitive programming?"**
 
 At the time, I had solved around 90 problems on LeetCode, mostly Easy and Medium. I was honest and asked for a month to prepare before the next step.
@@ -87,7 +81,7 @@ The interviewer spotted a **bug**, though the majority of my solution was correc
 
 This round was tricky. I took some time to understand the problem and realized it involved **cycle detection in a graph**.
 
-I made mistakes in the beginning, and it took me about **35 minutes** to get the solution right. Then I did a quick dry run in the last 5 minutes. The interviewer confirmed my final solution was correct. He had a follow-up question, but we ran out of time.
+I made mistakes in the beginning, and it took me about **35 minutes** to get the solution right. Then I did a quick dry run in the another 5 minutes. The interviewer confirmed my final solution was correct. He had a follow-up question, but we ran out of time.
 
 **Probable rating:** *Leaning Hire*
 
@@ -107,11 +101,11 @@ It was disappointing to hear, especially after coming so far. But I didn’t see
 
 ## What I Gained
 
-The whole process took almost **3 months**, and in that time:
+The whole process took almost **3-4 months**, and in that time:
 
-- I moved from **Ruby** to **Golang** (Read my [Golang journey here](https://www.shekharpatil.tech/docs/golang/intro))  
-- I developed a strong understanding of system design and data structures  
-- I solved hundreds of problems and built my [DSA Roadmap](https://www.shekharpatil.tech/docs/data-structures-and-algorithms/dsa-roadmap)  
+- I moved from **Ruby** to **Golang** (You can start Golang Here https://www.shekharpatil.tech/docs/golang/intro)  
+- I developed a strong understanding of low level system design and data structures  
+- I solved hundreds of problems and built my roadmap here https://www.shekharpatil.tech/docs/data-structures-and-algorithms/dsa-roadmap
 - I learned what top-tier companies really look for: correctness, speed, clarity, and optimality
 
 ---
