@@ -13,78 +13,128 @@ authors:
 
 ![Data structures and Algorithms](img/dsa.png)
 
-# Data structure and Algorithms
+# Data Structures and Algorithms Roadmap
 
-1. **Sorting Algorithms**:
-   - [Bubble Sort](sorting-algorithms/bubble-sort)
-   - Selection Sort *(Coming Soon)*
-   - Insertion Sort *(Coming Soon)*
-   - [Merge Sort](sorting-algorithms/merge-sort)
-   - [Quick Sort](sorting-algorithms/quick-sort)
-   - Heap Sort *(Coming Soon)*
-   - Counting Sort *(Coming Soon)*
-   - Radix Sort *(Coming Soon)*
+---
 
-2. **Data Structures**:
-   - Arrays *(Coming Soon)*
-   - [Linked Lists](data-structures/linked-list)
-      - [Singly Linked Lists](data-structures/linked-list/singly-linked-list)
-      - [Doubly Linked Lists](data-structures/linked-list/doubly-linked-list)
-      - [Circular Linked Lists](data-structures/linked-list/circular-linked-list)
-   - [Stacks](data-structures/stack)
-   - Queues *(Coming Soon)*
-   - Trees
-      - [General Trees](data-structures/tree/general-tree)
-      - Binary Trees *(Coming Soon)*
-      - Binary Search Trees *(Coming Soon)*
-      - AVL Trees *(Coming Soon)*
-      - Red-Black Trees *(Coming Soon)*
-   - Graphs
-      - Directed Graphs *(Coming Soon)*
-      - Undirected Graphs *(Coming Soon)*
-   - Hash Tables *(Coming Soon)*
-   - Heaps
-      - Min-Heap *(Coming Soon)*
-      - Max-Heap *(Coming Soon)*
-   - Trie *(Coming Soon)*
+## 1. **Data Structures**
 
-3. **Searching Algorithms**:
-   - Linear Search *(Coming Soon)*
-   - Binary Search *(Coming Soon)*
-   - Depth-First Search (DFS) *(Coming Soon)*
-   - Breadth-First Search (BFS) *(Coming Soon)*
+- Arrays *(Coming Soon)*
+- [Linked Lists](data-structures/linked-list)
+  - [Singly Linked Lists](data-structures/linked-list/singly-linked-list)
+  - [Doubly Linked Lists](data-structures/linked-list/doubly-linked-list)
+  - [Circular Linked Lists](data-structures/linked-list/circular-linked-list)
+- [Stacks](data-structures/stack)
+- Queues *(Coming Soon)*
+- Trees
+  - [General Trees](data-structures/tree/general-tree)
+  - Binary Trees *(Coming Soon)*
+  - Binary Search Trees *(Coming Soon)*
+- Graphs
+  - Directed Graphs *(Coming Soon)*
+  - Undirected Graphs *(Coming Soon)*
+- Hash Tables *(Coming Soon)*
+- Heaps
+  - Min-Heap *(Coming Soon)*
+  - Max-Heap *(Coming Soon)*
+- Trie *(Coming Soon)*
 
-4. **Graph Algorithms**:
-   - Depth-First Search (DFS) *(Coming Soon)*
-   - Breadth-First Search (BFS) *(Coming Soon)*
-   - Shortest Path Algorithms
-      - [Dijkstra's Algorithm](graph-algorithms/dijkstra-algorithm)
-      - Bellman-Ford Algorithm *(Coming Soon)*
-   - Minimum Spanning Tree Algorithms (Prim's, Kruskal's) *(Coming Soon)*
+---
 
-5. **Dynamic Programming**:
-   - Fibonacci Series *(Coming Soon)*
-   - Longest Common Subsequence (LCS) *(Coming Soon)*
-   - Knapsack Problem *(Coming Soon)*
-   - Coin Change Problem *(Coming Soon)*
-   - Matrix Chain Multiplication *(Coming Soon)*
-   - Edit Distance *(Coming Soon)*
-   - Longest Increasing Subsequence (LIS) *(Coming Soon)*
+## 2. **Sorting Algorithms**
 
-6. **Recursion**:
-   - Factorial *(Coming Soon)*
-   - Fibonacci Series *(Coming Soon)*
-   - Tower of Hanoi *(Coming Soon)*
-   - Permutations and Combinations *(Coming Soon)*
+- [Bubble Sort](sorting-algorithms/bubble-sort)
+- Selection Sort *(Coming Soon)*
+- Insertion Sort *(Coming Soon)*
+- [Merge Sort](sorting-algorithms/merge-sort)
+- [Quick Sort](sorting-algorithms/quick-sort)
+- Heap Sort *(Coming Soon)*
+- Counting Sort *(Coming Soon)*
+- Radix Sort *(Coming Soon)*
+- Topological Sort *(Coming Soon)*
 
-7. **Bit Manipulation**:
-   - Bitwise AND, OR, XOR *(Coming Soon)*
-   - Bitwise Shifts *(Coming Soon)*
-   - Bitwise Operators for Setting, Clearing, and Toggling Bits *(Coming Soon)*
-   - Finding the Bit Representation of a Number *(Coming Soon)*
+---
 
-8. **String Algorithms**:
-   - String Matching Algorithms (Naive, Rabin-Karp, Knuth-Morris-Pratt) *(Coming Soon)*
-   - Longest Common Subsequence (LCS) *(Coming Soon)*
-   - Longest Palindromic Substring *(Coming Soon)*
-   - String Manipulation (Reversal, Rotation) *(Coming Soon)*
+## 3. **Searching Algorithms**
+
+- Linear Search *(Coming Soon)*
+- Binary Search *(Coming Soon)*
+- Exponential Search *(Coming Soon)*
+- Ternary Search *(Coming Soon)*
+
+---
+
+## 4. **Graph Algorithms**
+
+- Depth-First Search (DFS) *(Coming Soon)*
+- Breadth-First Search (BFS) *(Coming Soon)*
+- [Dijkstra's Algorithm](graph-algorithms/dijkstra-algorithm)
+- Bellman-Ford Algorithm *(Coming Soon)*
+- Prim's Algorithm *(Coming Soon)*
+- Kruskal's Algorithm *(Coming Soon)*
+- Floyd-Warshall Algorithm *(Coming Soon)*
+- Union-Find / Disjoint Set Union (DSU) *(Coming Soon)*
+- Tarjan’s Algorithm *(Coming Soon)*
+- Kosaraju’s Algorithm *(Coming Soon)*
+
+---
+
+## 5. **Dynamic Programming Algorithms**
+
+- Kadane's Algorithm *(Coming Soon)*
+- 0/1 Knapsack *(Coming Soon)*
+
+---
+
+## 6. **Greedy Algorithms**
+
+- Activity Selection *(Coming Soon)*
+- Huffman Coding *(Coming Soon)*
+- Fractional Knapsack *(Coming Soon)*
+- Job Sequencing *(Coming Soon)*
+- Egyptian Fraction *(Coming Soon)*
+
+---
+
+## 7. **Backtracking Algorithms**
+
+- N-Queens Problem *(Coming Soon)*
+- Sudoku Solver *(Coming Soon)*
+- Rat in a Maze *(Coming Soon)*
+- Word Search *(Coming Soon)*
+- Subset Generation *(Coming Soon)*
+- Permutation Generation *(Coming Soon)*
+
+---
+
+## 8. **Bit Manipulation Algorithms**
+
+- Count Set Bits *(Coming Soon)*
+- Check Power of Two *(Coming Soon)*
+- XOR of All Numbers in Range *(Coming Soon)*
+- Find Missing Number *(Coming Soon)*
+- Find Two Non-Repeating Elements *(Coming Soon)*
+
+---
+
+## 9. **String Algorithms**
+
+- Naive Pattern Matching *(Coming Soon)*
+- Rabin-Karp Algorithm *(Coming Soon)*
+- Knuth-Morris-Pratt (KMP) Algorithm *(Coming Soon)*
+- Z-Algorithm *(Coming Soon)*
+- Longest Palindromic Substring *(Coming Soon)*
+- Anagram Check *(Coming Soon)*
+- Manacher’s Algorithm *(Coming Soon)*
+- Suffix Array & Suffix Tree *(Coming Soon)*
+
+---
+
+## 10. **Miscellaneous Must-Know Algorithms**
+
+- Sliding Window Technique *(Coming Soon)*
+- Two Pointer Technique *(Coming Soon)*
+- Fast & Slow Pointers (Cycle Detection) *(Coming Soon)*
+- Reservoir Sampling *(Coming Soon)*
+- Fisher-Yates Shuffle *(Coming Soon)*
+- Boyer-Moore Majority Voting *(Coming Soon)*
