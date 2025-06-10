@@ -21,7 +21,7 @@ import (
 
 func BubbleSort(nums []int) {
     n := len(nums)
-    
+
     for i := 0; i < n; i++ {
         swapped := false
         for j := 0; j < n-i-1; j++ {
@@ -62,5 +62,3 @@ func main() {
 ---
 
 Feel free to follow my work on GitHub: [Bubble Sort in Go](https://github.com/shekhar-patil/data_structure_and_algorithms/blob/main/sorting_algorithms/bubble_sort.go)
-
-```
