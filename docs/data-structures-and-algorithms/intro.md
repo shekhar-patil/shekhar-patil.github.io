@@ -45,7 +45,7 @@ authors:
 
 - [Bubble Sort](sorting-algorithms/bubble-sort)
 - Selection Sort *(Coming Soon)*
-- Insertion Sort *(Coming Soon)*
+- [Insertion Sort](sorting-algorithms/insertion-sort)
 - [Merge Sort](sorting-algorithms/merge-sort)
 - [Quick Sort](sorting-algorithms/quick-sort)
 - Heap Sort *(Coming Soon)*

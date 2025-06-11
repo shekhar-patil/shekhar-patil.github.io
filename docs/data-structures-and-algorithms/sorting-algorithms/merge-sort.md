@@ -1,6 +1,6 @@
 ---
 
-sidebar_position: 2
+sidebar_position: 4
 ---
 
 # Merge Sort
@@ -39,7 +39,7 @@ func MergeSort(arr []int) []int {
     mid := n / 2;
     if n <= 1 {
         return arr;
-    } 
+    }
 
     left := MergeSort(arr[mid:])
     right := MergeSort(arr[:mid])
