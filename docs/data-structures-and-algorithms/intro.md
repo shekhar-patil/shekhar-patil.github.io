@@ -44,7 +44,7 @@ authors:
 ## 2. **Sorting Algorithms**
 
 - [Bubble Sort](sorting-algorithms/bubble-sort)
-- Selection Sort *(Coming Soon)*
+- [Selection Sort](sorting-algorithms/selection-sort)
 - [Insertion Sort](sorting-algorithms/insertion-sort)
 - [Merge Sort](sorting-algorithms/merge-sort)
 - [Quick Sort](sorting-algorithms/quick-sort)
@@ -57,7 +57,7 @@ authors:
 
 ## 3. **Searching Algorithms**
 
-- Linear Search *(Coming Soon)*
+- [Linear Search](searching-algorithms/linear-search)
 - Binary Search *(Coming Soon)*
 - Exponential Search *(Coming Soon)*
 - Ternary Search *(Coming Soon)*
