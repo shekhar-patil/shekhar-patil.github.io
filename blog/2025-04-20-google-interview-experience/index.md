@@ -9,7 +9,7 @@ image: "./google.webp"
 ![Google Interview](./google.webp)
 
 Like many of us, I used to only share the good stuff — job offers, achievements, career milestones. But over time, I realized failures are just as important. They teach us, humble us, and help others feel less alone in their journey.
-
+<!--truncate-->
 This post is about my experience interviewing at Google. I made it to the final round but didn’t get the offer. It hurt, but I also learned a lot. I’m sharing my journey in hopes that it helps you prepare better.
 
 ---
@@ -32,11 +32,11 @@ At the time, I had solved around 90 problems on LeetCode, mostly Easy and Medium
 
 Before getting into the rounds, it’s helpful to know how Google evaluates you. After each interview, feedback is given as one of these:
 
-- Strong No Hire  
-- No Hire  
-- Leaning No Hire  
-- Leaning Hire  
-- Hire  
+- Strong No Hire
+- No Hire
+- Leaning No Hire
+- Leaning Hire
+- Hire
 - Strong Hire
 
 Only consistent "Hire" or "Strong Hire" ratings lead to an offer.
@@ -45,7 +45,7 @@ Only consistent "Hire" or "Strong Hire" ratings lead to an offer.
 
 ## The Elimination Round
 
-I used the one-month prep time to study hard. I solved over 250 DSA problems, mostly on LeetCode and AlgoExpert. You can see my full preparation here:  
+I used the one-month prep time to study hard. I solved over 250 DSA problems, mostly on LeetCode and AlgoExpert. You can see my full preparation here:
 📘 [DSA Roadmap](https://www.shekharpatil.tech/docs/data-structures-and-algorithms/dsa-roadmap)
 
 The round was a live coding interview with three graph problems, all linked together. I had to solve and code them in a Google Doc.
@@ -104,8 +104,8 @@ It was disappointing to hear, especially after coming so far. But I didn’t see
 
 The whole process took almost **3-4 months**, and in that time:
 
-- I moved from **Ruby** to **Golang** (You can start Golang Here https://www.shekharpatil.tech/docs/golang/intro)  
-- I developed a strong understanding of low level system design and data structures  
+- I moved from **Ruby** to **Golang** (You can start Golang Here https://www.shekharpatil.tech/docs/golang/intro)
+- I developed a strong understanding of low level system design and data structures
 - I solved hundreds of problems and built my roadmap here https://www.shekharpatil.tech/docs/data-structures-and-algorithms/dsa-roadmap
 - I learned what top-tier companies really look for: correctness, speed, clarity, and optimality
 
@@ -124,23 +124,23 @@ The whole process took almost **3-4 months**, and in that time:
 
 I’m not giving up. I’ll reapply in a year. Till then, I’m focused on:
 
-- Advanced system design  
-- Distributed systems  
-- Speeding up problem-solving  
-- Real-world contributions  
+- Advanced system design
+- Distributed systems
+- Speeding up problem-solving
+- Real-world contributions
 - Mastering Go and revisiting Ruby
 
 If you're preparing for Google or any FAANG interview, check out my:
 
-- 📘 [DSA Roadmap](https://www.shekharpatil.tech/docs/data-structures-and-algorithms/dsa-roadmap)  
+- 📘 [DSA Roadmap](https://www.shekharpatil.tech/docs/data-structures-and-algorithms/dsa-roadmap)
 - ✍️ [All My Blogs](https://www.shekharpatil.tech/blog)
 
 ---
 
 ## 🌐 Explore More
 
-- 🧑‍💻 [My Website & Projects](https://www.shekharpatil.tech)  
-- 📚 [Golang Learning Path](https://www.shekharpatil.tech/docs/golang/intro)  
+- 🧑‍💻 [My Website & Projects](https://www.shekharpatil.tech)
+- 📚 [Golang Learning Path](https://www.shekharpatil.tech/docs/golang/intro)
 - 🧠 [DSA Roadmap](https://www.shekharpatil.tech/docs/data-structures-and-algorithms/dsa-roadmap)
 
 ---
