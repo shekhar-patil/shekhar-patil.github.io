@@ -108,4 +108,4 @@ You can use the gem in many practical scenarios, such as:
 
 The `pdf_scanner` gem is a lightweight yet powerful tool for securing your PDF processing workflows in Ruby. With support for customizable policies and encrypted PDFs, it’s a must-have for any Ruby developer handling file uploads.
 
-You can find the gem on [RubyGems](https://rubygems.org/gems/pdf_scanner) or browse the source code on [GitHub](https://github.com/your-repo-link).
+You can find the gem on [RubyGems](https://rubygems.org/gems/pdf_scanner) or browse the source code on [GitHub](https://github.com/shekhar-patil/pdf_scanner).
