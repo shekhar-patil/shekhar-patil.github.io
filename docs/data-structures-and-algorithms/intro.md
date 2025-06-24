@@ -81,7 +81,7 @@ authors:
 
 ## 5. **Dynamic Programming Algorithms**
 
-- Kadane's Algorithm *(Coming Soon)*
+- [Kadane's Algorithm](dynamic-programming/kandanes-algorithm)
 - 0/1 Knapsack *(Coming Soon)*
 
 ---
