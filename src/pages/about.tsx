@@ -4,9 +4,14 @@ import styles from './about.module.css';
 
 export default function About(): JSX.Element {
   return (
-    <Layout title="About Shekhar Patil" description="Know more about Shekhar Patil - Senior Software Engineer and Open Source Contributor">
+    <Layout
+      title="About Shekhar Patil"
+      description="Know more about Shekhar Patil - Senior Software Engineer and Open Source Contributor"
+    >
       <main className={styles.main}>
         <div className={styles.container}>
+
+          {/* ✅ TEXT FIRST */}
           <div className={styles.textColumn}>
             <h1>Hey, I’m Shekhar Patil</h1>
             <p className={styles.subtitle}>
@@ -44,6 +49,7 @@ export default function About(): JSX.Element {
             </div>
           </div>
 
+          {/* ✅ IMAGE LAST → RENDERED ON RIGHT IN DESKTOP */}
           <div className={styles.photoColumn}>
             <img src="/img/profile.png" alt="Shekhar Patil" />
           </div>

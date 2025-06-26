@@ -10,36 +10,32 @@
 }
 
 .container {
-  display: table;
-  width: 100%;
+  display: flex;
+  flex-direction: row; /* image will be on right by default */
+  gap: 3rem;
   max-width: 1000px;
+  width: 100%;
   background: #fff;
-  table-layout: fixed;
-  border-collapse: collapse;
 }
 
 .textColumn {
-  display: table-cell;
-  vertical-align: top;
-  padding-right: 3rem;
+  flex: 2;
   font-size: 1.1rem;
   color: #4b5563;
   line-height: 1.6;
-  width: 65%;
 }
 
 .photoColumn {
-  display: table-cell;
-  vertical-align: top;
-  width: 35%;
-  text-align: center;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .photoColumn img {
   width: 300px;
   height: 300px;
   object-fit: cover;
-  display: inline-block;
   border-radius: 12px;
   border: 1.5px solid #ddd;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -95,27 +91,26 @@ p {
   text-decoration: underline;
 }
 
-/* Responsive for smaller devices */
+/* Responsive for mobile */
 @media (max-width: 900px) {
   .container {
-    display: block;
+    flex-direction: column; /* stack vertically */
+    align-items: center;
   }
-  .textColumn {
-    width: 100%;
-    padding-right: 0;
-  }
+
   .photoColumn {
-    width: 100%;
-    margin-top: 2rem;
-    text-align: center;
+    margin-bottom: 2rem;
   }
+
   .photoColumn img {
     width: 200px;
     height: 200px;
   }
+
   h1 {
     font-size: 2.4rem;
   }
+
   .subtitle {
     font-size: 1.1rem;
   }
