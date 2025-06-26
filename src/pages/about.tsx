@@ -49,7 +49,7 @@ export default function About(): JSX.Element {
             </div>
           </div>
 
-          {/* ✅ IMAGE LAST → RENDERED ON RIGHT IN DESKTOP */}
+          {/* ✅ IMAGE ON RIGHT (ON DESKTOP) */}
           <div className={styles.photoColumn}>
             <img src="/img/profile.png" alt="Shekhar Patil" />
           </div>

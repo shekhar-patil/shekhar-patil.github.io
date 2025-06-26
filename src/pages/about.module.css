@@ -11,7 +11,7 @@
 
 .container {
   display: flex;
-  flex-direction: row; /* image will be on right by default */
+  flex-direction: row;
   gap: 3rem;
   max-width: 1000px;
   width: 100%;
@@ -65,7 +65,6 @@ h2 {
   padding-bottom: 0.3rem;
 }
 
-/* Paragraph spacing */
 p {
   margin-bottom: 1rem;
 }
@@ -91,14 +90,15 @@ p {
   text-decoration: underline;
 }
 
-/* Responsive for mobile */
+/* Responsive: Image goes on top */
 @media (max-width: 900px) {
   .container {
-    flex-direction: column; /* stack vertically */
+    flex-direction: column;
     align-items: center;
   }
 
   .photoColumn {
+    order: -1; /* ⬅️ move image above text */
     margin-bottom: 2rem;
   }
 
