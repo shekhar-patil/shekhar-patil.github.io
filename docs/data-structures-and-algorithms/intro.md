@@ -58,7 +58,7 @@ authors:
 ## 3. **Searching Algorithms**
 
 - [Linear Search](searching-algorithms/linear-search)
-- Binary Search *(Coming Soon)*
+- [Binary Search](searching-algorithms/binary-search)
 - Exponential Search *(Coming Soon)*
 - Ternary Search *(Coming Soon)*
 
