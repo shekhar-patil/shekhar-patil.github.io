@@ -2,13 +2,20 @@ import React from 'react';
 import clsx from 'clsx';
 import styles from './styles.module.css';
 import pngImage from '@site/static/img/dashboard.png';
-import useGlobalData from '@docusaurus/useGlobalData';
+import blogList from '@site/src/data/blogList';
 import Link from '@docusaurus/Link';
 
 export default function HomepageFeatures() {
-  const globalData = useGlobalData();
-  const blogPosts = globalData['docusaurus-plugin-content-blog']?.default?.items || [];
-  const latestPosts = blogPosts.slice(0, 3);
+  const latestPosts = blogList.slice(0, 6);
+
+  // Only show featured blogs (manually selected)
+  const featuredPosts = [
+    blogList[0], // Most recent
+    blogList[1], // Second most recent
+    blogList[2], // Third most recent
+    blogList[3],
+    blogList[4],
+  ]; // Replace with any specific posts you want to feature
 
   return (
     <div className={styles.container}>
@@ -61,25 +68,32 @@ export default function HomepageFeatures() {
         </div>
       </section>
 
-      {/* Latest Blogs */}
-      {latestPosts.length > 0 && (
+      {/* Featured Blogs */}
+      {featuredPosts.length > 0 && (
         <section className={styles.blogSection}>
           <div className={styles.contentWrapper}>
-            <h2 className={styles.sectionTitle}>Latest Blog Posts</h2>
-            <div className={styles.blogGrid}>
-              {latestPosts.map((post, idx) => (
-                <Link to={post.permalink} key={idx} className={styles.blogCard}>
-                  <h3>{post.title}</h3>
-                  <p>{post.description || post.contentTitle || 'Read more →'}</p>
-                  <span className={styles.blogDate}>
+            <h2 className={styles.sectionTitle}>Featured Blog Posts</h2>
+            <ul className={styles.latestBlogList} style={{listStyleType: 'disc', listStylePosition: 'outside', paddingLeft: 32, margin: 0}}>
+              {featuredPosts.map((post, idx) => (
+                <li key={idx} className={styles.blogItem} style={{display: 'list-item', alignItems: 'center', padding: 0, margin: 0, position: 'relative', listStyleType: 'disc', listStylePosition: 'outside'}}>
+                  <span style={{display: 'inline-block', minWidth: 120, fontVariantNumeric: 'tabular-nums', marginLeft: 0, textAlign: 'left'}}>
                     {new Date(post.date).toLocaleDateString('en-IN', {
                       year: 'numeric',
                       month: 'short',
-                      day: 'numeric',
+                      day: '2-digit',
                     })}
                   </span>
-                </Link>
+                  <span style={{margin: '0 1.2em 0 0.5em'}}>: </span>
+                  <Link to={post.permalink} className={styles.latestBlogLink}>
+                    {post.title}
+                  </Link>
+                </li>
               ))}
+            </ul>
+            <div style={{marginTop: '1.5rem'}}>
+              <Link to="/blog" className={styles.allBlogsLink}>
+                All Blogs &rarr;
+              </Link>
             </div>
           </div>
         </section>

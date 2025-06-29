@@ -6,7 +6,7 @@ tags: [rails]
 ---
 
 Rails follow the DRY principle of software development and that is 'Don't Repeat Yourself'.
-Scopes is are great to keep our code DRY and well organized. It's just a set of pre-defined SQL queries that we can use to write complex queries.
+Scopes are great to keep our code DRY and well organized. It's just a set of pre-defined SQL queries that we can use to write complex queries.
 
 <!--truncate-->
 
