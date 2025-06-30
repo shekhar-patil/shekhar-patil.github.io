@@ -10,9 +10,9 @@ This week, I explored goroutines in more depth, particularly focusing on how to 
 ### How to Terminate Goroutines in Go?
 
 In Go, goroutines cannot be forcefully killed. Instead, they should be terminated **gracefully and in a controlled manner**.
-
-You can achieve this using mechanisms such as **channels**, **context**, or a **shared flag**. Among these, using `context` is the most recommended and idiomatic way.
 <!--truncate-->
+You can achieve this using mechanisms such as **channels**, **context**, or a **shared flag**. Among these, using `context` is the most recommended and idiomatic way.
+
 ---
 
 ### Method 1: Using `context.Context`
