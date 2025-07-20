@@ -12,7 +12,7 @@ const config: Config = {
   baseUrl: '/',
 
   organizationName: 'Shekhar Patil',
-  projectName: 'my-website',
+  projectName: 'shekhar-patil.github.io',
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
