@@ -11,7 +11,7 @@ const config: Config = {
   url: 'https://shekhar-patil.github.io',
   baseUrl: '/',
 
-  organizationName: 'Shekhar Patil',
+  organizationName: 'shekhar-patil',
   projectName: 'shekhar-patil.github.io',
   trailingSlash: false,
 
