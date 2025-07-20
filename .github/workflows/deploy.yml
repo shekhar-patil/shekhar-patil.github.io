@@ -8,8 +8,9 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Setup Node.js
@@ -20,23 +21,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-
-      - name: Build website
-        run: npm run build
-
-      - name: List files after build
-        run: |
-          echo "Listing files in workspace root:"
-          ls -alh
-          echo "Listing files in build directory:"
-          ls -alh build || echo "No build directory found"
-
-      - name: Deploy build output to root of main branch
-        run: |
-          rm -rf ./* .[^.]* || true
-          cp -r build/. .
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add .
-          git commit -m "Deploy website [skip ci]" || echo "No changes to commit"
-          git push origin main
+      - name: Build and deploy
+        env:
+          GIT_USER: github-actions[bot]
+          GIT_EMAIL: github-actions[bot]@users.noreply.github.com
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm run deploy

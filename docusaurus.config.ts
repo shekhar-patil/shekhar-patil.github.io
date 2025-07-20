@@ -8,11 +8,12 @@ const config: Config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://shekharpatil.tech',
+  url: 'https://shekhar-patil.github.io',
   baseUrl: '/',
 
   organizationName: 'Shekhar Patil',
   projectName: 'shekhar-patil.github.io',
+  trailingSlash: false,
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
