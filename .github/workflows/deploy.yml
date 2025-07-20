@@ -3,25 +3,31 @@ name: Deploy Docusaurus to GitHub Pages
 on:
   push:
     branches:
-      - main  # Trigger only on push to main branch
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout source code
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: '20'
 
       - name: Install dependencies
         run: npm ci
 
       - name: Build website
         run: npm run build
+
+      - name: Set Git identity for Docusaurus deploy
+        run: |
+          git config --global user.name "shekhar-patil"
+          git config --global user.email "shekhar-patil@users.noreply.github.com"
 
       - name: Deploy to GitHub Pages
         env:
