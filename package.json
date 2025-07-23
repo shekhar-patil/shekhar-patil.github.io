@@ -10,7 +10,7 @@
     "clear": "docusaurus clear",
     "serve": "docusaurus serve",
     "predeploy": "npm run build",
-    "deploy": "docusaurus deploy",
+    "deploy": "USE_SSH=true docusaurus deploy",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
     "typecheck": "tsc",
