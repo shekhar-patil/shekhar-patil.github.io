@@ -28,9 +28,17 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Deploy to GitHub Pages
-        env:
-          GIT_USER: github-actions[bot]
-          GIT_PASS: ${{ secrets.GH_TOKEN }}
+      - name: Remove old site files (except .git, .github, node_modules)
         run: |
-          npm run deploy
+          shopt -s extglob
+          rm -rf !(build|.git|.github|node_modules)
+
+      - name: Copy build output to root
+        run: |
+          cp -r build/. .
+
+      - name: Commit and push changes
+        run: |
+          git add .
+          git commit -m "Deploy website [skip ci]" || echo "No changes to commit"
+          git push origin main

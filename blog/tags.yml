@@ -1,36 +1,80 @@
+javascipt:
+  label: Javascript
+  permalink: /blog/tags/javascipt
+
+postgres:
+  label: Postgres
+  permalink: /blog/tags/postgres
+
+design-pattern:
+  label: Design Pattern
+  permalink: /blog/tags/design-pattern
+
+concurrency:
+  label: Concurrency
+  permalink: /blog/tags/concurrency
+
+interview:
+  label: Interview
+  permalink: /blog/tags/interview
+
+google:
+  label: Google
+  permalink: /blog/tags/google
+
+pdf:
+  label: PDF
+  permalink: /blog/tags/pdf
+
+security:
+  label: Security
+  permalink: /blog/tags/security
+
+gem:
+  label: Gem
+  permalink: /blog/tags/gem
+
 ruby:
   label: Ruby
   permalink: /ruby
   description: A dynamic, open source programming language with a focus on simplicity and productivity. It has an elegant syntax that is natural to read and easy to write.
+
 golang:
   label: Golang
   permalink: /golang
-  description: Go is a statically typed, compiled high-level programming language designed at Google by Robert Griesemer, Rob Pike, and Ken Thompson. It is syntactically similar to C, but also has memory safety, garbage collection, structural typing, and CSP-style concurrency.
+  description: Go is a statically typed, compiled high-level programming language designed at Google...
+
 rails:
   label: Rails
   permalink: /rails
-  description: Ruby on Rails is a server-side web application framework written in Ruby under the MIT License. Rails is a model–view–controller framework, providing default structures for a database, a web service, and web pages.
+  description: Ruby on Rails is a server-side web application framework...
+
 system-design:
   label: System Design
   permalink: /system-design
-  description: System design principles, patterns, and best practices for building scalable and reliable systems.
+  description: System design principles, patterns, and best practices...
+
 mysql:
   label: MySQL
   permalink: /mysql
-  description: MySQL is an open-source relational database management system based on SQL – Structured Query Language.
+  description: MySQL is an open-source relational database...
+
 javascript:
   label: JavaScript
   permalink: /javascript
-  description: JavaScript is a versatile, high-level programming language primarily used for web development to create interactive effects within web browsers.
+  description: JavaScript is a versatile, high-level programming language...
+
 python:
   label: Python
   permalink: /python
-  description: Python is a high-level, interpreted programming language known for its readability, simplicity, and wide range of applications.
+  description: Python is a high-level, interpreted programming language...
+
 devops:
   label: DevOps
   permalink: /devops
-  description: DevOps combines software development and IT operations to shorten the development lifecycle and deliver high-quality software continuously.
+  description: DevOps combines software development and IT operations...
+
 cloud:
   label: Cloud
   permalink: /cloud
-  description: Cloud computing provides on-demand computing resources and services over the internet, enabling scalability and
+  description: Cloud computing provides on-demand computing resources...
