@@ -14,7 +14,7 @@ const config: Config = {
   organizationName: 'shekhar-patil',
   projectName: 'shekhar-patil.github.io',
   trailingSlash: false,
-  deploymentBranch: 'main',
+  deploymentBranch: 'gh-pages',
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
