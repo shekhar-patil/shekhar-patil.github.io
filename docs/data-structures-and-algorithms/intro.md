@@ -68,9 +68,9 @@ authors:
 
 - Depth-First Search (DFS) *(Coming Soon)*
 - Breadth-First Search (BFS) *(Coming Soon)*
+- [Prim's Algorithm](graph-algorithms/prims-algorithm)
 - [Dijkstra's Algorithm](graph-algorithms/dijkstra-algorithm)
 - Bellman-Ford Algorithm *(Coming Soon)*
-- Prim's Algorithm *(Coming Soon)*
 - Kruskal's Algorithm *(Coming Soon)*
 - Floyd-Warshall Algorithm *(Coming Soon)*
 - Union-Find / Disjoint Set Union (DSU) *(Coming Soon)*
