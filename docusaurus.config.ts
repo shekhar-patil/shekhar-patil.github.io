@@ -17,7 +17,7 @@ const config: Config = {
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  deploymentBranch: 'gh-pages',
+  deploymentBranch: 'main',
 
   i18n: {
     defaultLocale: 'en',
