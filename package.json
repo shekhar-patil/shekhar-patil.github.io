@@ -10,11 +10,10 @@
     "clear": "docusaurus clear",
     "serve": "docusaurus serve",
     "predeploy": "npm run build",
-    "deploy": "USE_SSH=true docusaurus deploy",
+    "deploy": "GIT_USER=shekhar-patil docusaurus deploy",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
-    "typecheck": "tsc",
-    "build:docs": "docusaurus build && rm -rf docs/* && cp -r build/* docs/ && touch docs/.nojekyll"
+    "typecheck": "tsc"
   },
   "dependencies": {
     "@docusaurus/core": "^3.7.0",

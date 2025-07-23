@@ -53,7 +53,7 @@ const config: Config = {
         blog: {
           showReadingTime: true,
           blogSidebarCount: 'ALL',
-          blogSidebarTitle: 'All our blogs',
+          blogSidebarTitle: 'Blogs',
           postsPerPage: 5,
           onUntruncatedBlogPosts: 'ignore',
         },
