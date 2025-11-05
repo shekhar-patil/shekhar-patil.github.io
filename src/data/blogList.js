@@ -4,7 +4,7 @@ export default [
   // Sorted by date descending (latest first)
 {
     title: "Migrating to Distroless Containers — My Real World Journey",
-    date: "2025-11-04",
+    date: "2025-11-05",
     permalink: "/blog/distroless-migration",
     authors: [{ name: "shekhar-patil" }],
   },

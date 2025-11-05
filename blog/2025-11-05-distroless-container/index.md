@@ -3,7 +3,7 @@ slug: distroless-migration
 title: "Migrating to Distroless Containers — My Real World Journey"
 description: "A practical guide on what distroless containers are, their pros and cons, and real challenges I faced while migrating microservices to distroless."
 tags: [docker, containers, distroless, devops, golang, kubernetes]
-date: 2025-11-04
+date: 2025-11-05
 authors: shekhar-patil
 ---
 
