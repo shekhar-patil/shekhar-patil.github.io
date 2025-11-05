@@ -2,6 +2,12 @@
 // Add your blog post metadata here.
 export default [
   // Sorted by date descending (latest first)
+{
+    title: "Migrating to Distroless Containers — My Real World Journey",
+    date: "2025-11-05",
+    permalink: "/blog/distroless-migration",
+    authors: [{ name: "shekhar-patil" }],
+  },
   {
     title: "Introducing My New Ruby Gem - PDFScanner",
     date: "2025-05-20",
