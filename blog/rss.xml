@@ -18,103 +18,101 @@
 <p>In this post, I’ll share what distroless containers are, their advantages and disadvantages, the challenges I faced during migration, and a few lessons learned along the way.</p>
 <hr>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="what-are-distroless-containers">What Are Distroless Containers?<a href="https://shekhar-patil.github.io/blog/distroless-migration#what-are-distroless-containers" class="hash-link" aria-label="Direct link to What Are Distroless Containers?" title="Direct link to What Are Distroless Containers?">​</a></h2>
-<p>A <strong>distroless container</strong> is a Docker image that does not include a full Linux distribution like Ubuntu, Debian, or Alpine. Instead, it only contains:</p>
+<p>A <strong>distroless container</strong> is a Docker image that does not include a full Linux distribution like Ubuntu, Debian, or Alpine.
+Instead, it only contains what your application actually needs to run — your <strong>compiled binary</strong> and its <strong>runtime dependencies</strong>.</p>
+<p>That’s it:</p>
 <ul>
-<li>Your application binary</li>
-<li>The runtime dependencies required to execute that binary</li>
+<li>No shell (<code>bash</code>)</li>
+<li>No package manager (<code>apt</code>, <code>yum</code>)</li>
+<li>No unnecessary system tools or libraries</li>
 </ul>
-<p>That’s it. No shell (<code>bash</code>), no package manager (<code>apt</code>, <code>yum</code>), and no unnecessary tools.</p>
-<p>Google popularized the concept through their <a href="https://github.com/GoogleContainerTools/distroless" target="_blank" rel="noopener noreferrer">Distroless project</a>, aiming to make containers smaller, more secure, and production-focused.</p>
+<p>Google popularized the concept through their <a href="https://github.com/GoogleContainerTools/distroless" target="_blank" rel="noopener noreferrer">Distroless project</a>, focusing on making containers <strong>smaller, more secure, and production-optimized</strong>.</p>
 <hr>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="why-go-distroless">Why Go Distroless?<a href="https://shekhar-patil.github.io/blog/distroless-migration#why-go-distroless" class="hash-link" aria-label="Direct link to Why Go Distroless?" title="Direct link to Why Go Distroless?">​</a></h2>
-<p>When I started exploring distroless images, my main motivation was <strong>security and performance</strong>. But once I began migrating, I discovered several other benefits.</p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="1-reduced-attack-surface">1. Reduced Attack Surface<a href="https://shekhar-patil.github.io/blog/distroless-migration#1-reduced-attack-surface" class="hash-link" aria-label="Direct link to 1. Reduced Attack Surface" title="Direct link to 1. Reduced Attack Surface">​</a></h3>
-<p>Since there’s no shell or package manager, attackers have very limited options to exploit. They can’t simply exec into the container and run commands.
-Essentially, there’s nothing to attack beyond your application itself.</p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="2-smaller-image-size">2. Smaller Image Size<a href="https://shekhar-patil.github.io/blog/distroless-migration#2-smaller-image-size" class="hash-link" aria-label="Direct link to 2. Smaller Image Size" title="Direct link to 2. Smaller Image Size">​</a></h3>
-<p>Distroless images remove unnecessary OS layers, reducing the image size significantly.
-Smaller images mean faster deployments and less network overhead.</p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="3-faster-startup-and-pull-times">3. Faster Startup and Pull Times<a href="https://shekhar-patil.github.io/blog/distroless-migration#3-faster-startup-and-pull-times" class="hash-link" aria-label="Direct link to 3. Faster Startup and Pull Times" title="Direct link to 3. Faster Startup and Pull Times">​</a></h3>
-<p>Because they’re lightweight, distroless containers pull and start up faster — a big advantage in Kubernetes environments where pods are frequently restarted or scaled.</p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="4-simplified-dependency-management">4. Simplified Dependency Management<a href="https://shekhar-patil.github.io/blog/distroless-migration#4-simplified-dependency-management" class="hash-link" aria-label="Direct link to 4. Simplified Dependency Management" title="Direct link to 4. Simplified Dependency Management">​</a></h3>
-<p>You only include what your application truly needs — no extra tools, libraries, or system packages.</p>
+<p>When I began exploring distroless images, my main motivation was <strong>security and performance</strong>, but I soon discovered other benefits that made the migration worthwhile.</p>
+<ul>
+<li><strong>Reduced Attack Surface</strong> — Without shells or package managers, attackers have little to exploit. They can’t simply exec into your container and run arbitrary commands.</li>
+<li><strong>Smaller Image Size</strong> — Removing unnecessary OS layers makes images significantly lighter, leading to faster builds, pulls, and deployments.</li>
+<li><strong>Faster Startup and Pull Times</strong> — Smaller images mean quicker startups, which is especially helpful in Kubernetes where pods often restart or scale rapidly.</li>
+<li><strong>Simplified Dependency Management</strong> — You include only the dependencies your app truly needs, nothing more.</li>
+</ul>
 <hr>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="whats-missing-the-disadvantages">What’s Missing (The Disadvantages)<a href="https://shekhar-patil.github.io/blog/distroless-migration#whats-missing-the-disadvantages" class="hash-link" aria-label="Direct link to What’s Missing (The Disadvantages)" title="Direct link to What’s Missing (The Disadvantages)">​</a></h2>
-<p>Distroless containers bring simplicity, but that simplicity also creates new challenges.</p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="1-no-shell-access">1. No Shell Access<a href="https://shekhar-patil.github.io/blog/distroless-migration#1-no-shell-access" class="hash-link" aria-label="Direct link to 1. No Shell Access" title="Direct link to 1. No Shell Access">​</a></h3>
+<p>Distroless containers simplify production deployments but introduce some trade-offs.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="no-shell-access">No Shell Access<a href="https://shekhar-patil.github.io/blog/distroless-migration#no-shell-access" class="hash-link" aria-label="Direct link to No Shell Access" title="Direct link to No Shell Access">​</a></h3>
 <p>You can’t just <code>docker exec -it &lt;container&gt; /bin/bash</code> anymore.
-For teams used to debugging directly inside containers, this can be frustrating at first.</p>
-<p><strong>Tip:</strong> I learned to use <em>debug sidecars</em> or temporarily replace the base image with a non-distroless version for troubleshooting.</p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="2-harder-debugging-and-troubleshooting">2. Harder Debugging and Troubleshooting<a href="https://shekhar-patil.github.io/blog/distroless-migration#2-harder-debugging-and-troubleshooting" class="hash-link" aria-label="Direct link to 2. Harder Debugging and Troubleshooting" title="Direct link to 2. Harder Debugging and Troubleshooting">​</a></h3>
-<p>There’s no <code>curl</code>, <code>netcat</code>, <code>ps</code>, or <code>top</code>. You need to plan observability from the start.
-Tools like Prometheus exporters, structured logging, and health probes become essential.</p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="3-additional-build-complexity">3. Additional Build Complexity<a href="https://shekhar-patil.github.io/blog/distroless-migration#3-additional-build-complexity" class="hash-link" aria-label="Direct link to 3. Additional Build Complexity" title="Direct link to 3. Additional Build Complexity">​</a></h3>
-<p>Since distroless images only contain your final binary, you must use <strong>multi-stage Docker builds</strong> — one stage for compiling, and another for running the minimal image.</p>
+For teams that rely on in-container debugging, this can feel restrictive.</p>
+<blockquote>
+<p><strong>Tip:</strong> Use <em>debug sidecars</em> or temporarily swap your base image with a non-distroless version when troubleshooting.</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="harder-debugging-and-troubleshooting">Harder Debugging and Troubleshooting<a href="https://shekhar-patil.github.io/blog/distroless-migration#harder-debugging-and-troubleshooting" class="hash-link" aria-label="Direct link to Harder Debugging and Troubleshooting" title="Direct link to Harder Debugging and Troubleshooting">​</a></h3>
+<p>No <code>curl</code>, <code>netcat</code>, <code>ps</code>, or <code>top</code>. You’ll need to invest in better observability — structured logging, health probes, and metrics become your main debugging tools.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="additional-build-complexity">Additional Build Complexity<a href="https://shekhar-patil.github.io/blog/distroless-migration#additional-build-complexity" class="hash-link" aria-label="Direct link to Additional Build Complexity" title="Direct link to Additional Build Complexity">​</a></h3>
+<p>Since distroless containers only hold your final binary, you’ll need <strong>multi-stage builds</strong> to compile and package your app separately.</p>
 <hr>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="my-migration-experience--challenges-and-learnings">My Migration Experience — Challenges and Learnings<a href="https://shekhar-patil.github.io/blog/distroless-migration#my-migration-experience--challenges-and-learnings" class="hash-link" aria-label="Direct link to My Migration Experience — Challenges and Learnings" title="Direct link to My Migration Experience — Challenges and Learnings">​</a></h2>
-<p>When we began migrating our existing services to distroless containers, I encountered several practical issues that weren’t immediately obvious.</p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="1-replacing-shell-scripts">1. Replacing Shell Scripts<a href="https://shekhar-patil.github.io/blog/distroless-migration#1-replacing-shell-scripts" class="hash-link" aria-label="Direct link to 1. Replacing Shell Scripts" title="Direct link to 1. Replacing Shell Scripts">​</a></h3>
-<p>Our older containers relied heavily on shell scripts for:</p>
+<p>When we began migrating existing services to distroless containers, I ran into several practical challenges that weren’t obvious at first.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="replacing-shell-scripts">Replacing Shell Scripts<a href="https://shekhar-patil.github.io/blog/distroless-migration#replacing-shell-scripts" class="hash-link" aria-label="Direct link to Replacing Shell Scripts" title="Direct link to Replacing Shell Scripts">​</a></h3>
+<p>Our older containers depended heavily on shell scripts for:</p>
 <ul>
 <li>Setting environment variables</li>
 <li>Running database migrations</li>
 <li>Checking dependencies before startup</li>
 </ul>
-<p>With no shell available, I had to rethink this completely.</p>
-<p><strong>Solution:</strong> I rewrote many of these scripts in <strong>Go</strong>.
-This made the logic type-safe, testable, and independent of any shell interpreter.</p>
+<p>With no shell available, these scripts had to go.</p>
+<p><strong>Solution:</strong> I rewrote many of them in <strong>Go</strong>.
+This made the startup logic type-safe, testable, and independent of any external shell.</p>
 <p>Example:</p>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"># Old startup.sh</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">#!/bin/bash</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">echo "Waiting for database..."</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">until nc -z $DB_HOST 5432; do</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  sleep 1</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">done</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">echo "Database is up!"</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">./app</span><br></span></code></pre></div></div>
 <p>Converted to Go:</p>
 <div class="language-go codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-go codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">package</span><span class="token plain"> main</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">import</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token string" style="color:#e3116c">"fmt"</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token string" style="color:#e3116c">"net"</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token string" style="color:#e3116c">"os"</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token string" style="color:#e3116c">"time"</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">func</span><span class="token plain"> </span><span class="token function" style="color:#d73a49">waitForDB</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">host </span><span class="token builtin">string</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> port </span><span class="token builtin">string</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token keyword" style="color:#00009f">for</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        conn</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> err </span><span class="token operator" style="color:#393A34">:=</span><span class="token plain"> net</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">DialTimeout</span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">"tcp"</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> net</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">JoinHostPort</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">host</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> port</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">2</span><span class="token operator" style="color:#393A34">*</span><span class="token plain">time</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">Second</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        </span><span class="token keyword" style="color:#00009f">if</span><span class="token plain"> err </span><span class="token operator" style="color:#393A34">==</span><span class="token plain"> </span><span class="token boolean" style="color:#36acaa">nil</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            conn</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">Close</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            fmt</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">Println</span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">"Database is up!"</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            </span><span class="token keyword" style="color:#00009f">return</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        </span><span class="token punctuation" style="color:#393A34">}</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        fmt</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">Println</span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">"Waiting for database..."</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        time</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">Sleep</span><span class="token punctuation" style="color:#393A34">(</span><span class="token number" style="color:#36acaa">1</span><span class="token plain"> </span><span class="token operator" style="color:#393A34">*</span><span class="token plain"> time</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">Second</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token punctuation" style="color:#393A34">}</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">func</span><span class="token plain"> </span><span class="token function" style="color:#d73a49">main</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token function" style="color:#d73a49">waitForDB</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">os</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">Getenv</span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">"DB_HOST"</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">"5432"</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token comment" style="color:#999988;font-style:italic">// Start app here</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><br></span></code></pre></div></div>
-<p>This approach made each container self-contained and completely distroless-friendly.</p>
+<p>This made each container self-contained and fully distroless-compatible.</p>
 <hr>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="2-using-init-containers-for-legacy-tasks">2. Using Init Containers for Legacy Tasks<a href="https://shekhar-patil.github.io/blog/distroless-migration#2-using-init-containers-for-legacy-tasks" class="hash-link" aria-label="Direct link to 2. Using Init Containers for Legacy Tasks" title="Direct link to 2. Using Init Containers for Legacy Tasks">​</a></h3>
-<p>Some older scripts were too complex to rewrite immediately.
-In those cases, I used <strong>Kubernetes init containers</strong> (based on lightweight images like Alpine or Debian) to handle:</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="using-init-containers-for-legacy-tasks">Using Init Containers for Legacy Tasks<a href="https://shekhar-patil.github.io/blog/distroless-migration#using-init-containers-for-legacy-tasks" class="hash-link" aria-label="Direct link to Using Init Containers for Legacy Tasks" title="Direct link to Using Init Containers for Legacy Tasks">​</a></h3>
+<p>Some older scripts were too complex to rewrite right away.
+For those, I used <strong>Kubernetes init containers</strong> (based on lightweight images like Alpine or Debian) to handle:</p>
 <ul>
 <li>Database migrations</li>
 <li>Configuration setup</li>
-<li>Any one-time startup logic</li>
+<li>Any one-time initialization logic</li>
 </ul>
-<p>After the init containers completed, the main service ran in the distroless container.
-This hybrid approach made the transition much smoother.</p>
+<p>After the init container finished, the main service ran inside the <strong>distroless container</strong>.
+This hybrid approach helped us migrate gradually without blocking releases.</p>
 <hr>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="3-debugging-without-a-shell">3. Debugging Without a Shell<a href="https://shekhar-patil.github.io/blog/distroless-migration#3-debugging-without-a-shell" class="hash-link" aria-label="Direct link to 3. Debugging Without a Shell" title="Direct link to 3. Debugging Without a Shell">​</a></h3>
-<p>Debugging was one of the biggest challenges initially.
-My usual “<code>docker exec</code> into the pod” workflow no longer worked.</p>
-<p>What helped:</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="debugging-without-a-shell">Debugging Without a Shell<a href="https://shekhar-patil.github.io/blog/distroless-migration#debugging-without-a-shell" class="hash-link" aria-label="Direct link to Debugging Without a Shell" title="Direct link to Debugging Without a Shell">​</a></h3>
+<p>Debugging was initially tough. The usual “<code>docker exec</code> into the pod” approach no longer worked.</p>
+<p>Here’s what helped:</p>
 <ul>
-<li>Running <strong>debug tools</strong> in separate ephemeral containers (<code>kubectl debug</code>)</li>
-<li>Writing <strong>structured logs</strong> with clear log levels</li>
-<li>Adding proper <strong>readiness and liveness probes</strong></li>
+<li>Running <strong>debug tools</strong> inside ephemeral containers (<code>kubectl debug</code>)</li>
+<li>Adding <strong>structured logs</strong> with proper log levels</li>
+<li>Setting up <strong>readiness and liveness probes</strong> for better observability</li>
 </ul>
-<p>Over time, I began relying more on observability and logs instead of manual inspection.</p>
+<p>Eventually, I relied less on manual debugging and more on telemetry and metrics.</p>
 <hr>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="4-multi-stage-docker-builds">4. Multi-Stage Docker Builds<a href="https://shekhar-patil.github.io/blog/distroless-migration#4-multi-stage-docker-builds" class="hash-link" aria-label="Direct link to 4. Multi-Stage Docker Builds" title="Direct link to 4. Multi-Stage Docker Builds">​</a></h3>
-<p>Here’s an example of a typical multi-stage Dockerfile after migration:</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="multi-stage-docker-builds">Multi-Stage Docker Builds<a href="https://shekhar-patil.github.io/blog/distroless-migration#multi-stage-docker-builds" class="hash-link" aria-label="Direct link to Multi-Stage Docker Builds" title="Direct link to Multi-Stage Docker Builds">​</a></h3>
+<p>Here’s a typical multi-stage Dockerfile I used after migration:</p>
 <div class="language-dockerfile codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-dockerfile codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"># Stage 1: Build the binary</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">FROM golang:1.23 AS builder</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">WORKDIR /app</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">COPY . .</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">RUN go build -o main .</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># Stage 2: Run using a distroless base</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">FROM gcr.io/distroless/base-debian12</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">WORKDIR /</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">COPY --from=builder /app/main /</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">USER nonroot:nonroot</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">ENTRYPOINT ["/main"]</span><br></span></code></pre></div></div>
-<p>This pattern ensures the final image is small, secure, and free of unnecessary build tools.</p>
+<p>This approach kept the final image small, secure, and free from unnecessary build tools.</p>
 <hr>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="other-lessons-learned">Other Lessons Learned<a href="https://shekhar-patil.github.io/blog/distroless-migration#other-lessons-learned" class="hash-link" aria-label="Direct link to Other Lessons Learned" title="Direct link to Other Lessons Learned">​</a></h2>
 <ul>
 <li><strong>Pin image digests</strong> instead of tags — distroless images are updated frequently.</li>
-<li><strong>Use non-root users</strong> — distroless makes this straightforward with <code>nonroot:nonroot</code>.</li>
-<li><strong>Keep base images consistent</strong> across services to simplify maintenance.</li>
-<li><strong>Document startup logic</strong> — once shell scripts are gone, other developers might need clarity.</li>
+<li><strong>Run as non-root</strong> — distroless supports <code>nonroot:nonroot</code> users out of the box.</li>
+<li><strong>Use consistent base images</strong> across services to simplify maintenance.</li>
+<li><strong>Document startup logic</strong> — once shell scripts are removed, clarity becomes vital for future maintainers.</li>
 </ul>
 <hr>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="final-thoughts">Final Thoughts<a href="https://shekhar-patil.github.io/blog/distroless-migration#final-thoughts" class="hash-link" aria-label="Direct link to Final Thoughts" title="Direct link to Final Thoughts">​</a></h2>
-<p>Migrating to distroless containers isn’t just a technical change — it’s a <strong>shift in mindset</strong>.
-You move from treating containers as mini operating systems to treating them as <strong>immutable binaries</strong>.</p>
-<p>The transition can be challenging, especially if your workflows depend heavily on shell utilities, but the <strong>security, performance, and consistency gains</strong> make it worth the effort.</p>
-<p>If you’re planning a migration:</p>
+<p>Migrating to distroless containers isn’t just a technical refactor — it’s a <strong>mindset shift</strong>.
+You stop treating containers as mini operating systems and start treating them as <strong>immutable application packages</strong>.</p>
+<p>The transition can feel challenging, especially if your workflows depend on shell utilities, but the benefits in <strong>security</strong>, <strong>performance</strong>, and <strong>consistency</strong> make it absolutely worth it.</p>
+<p>If you’re planning to go distroless:</p>
 <ul>
-<li>Start small.</li>
+<li>Start with one or two services.</li>
 <li>Keep a debug-friendly fallback.</li>
-<li>Refactor gradually.</li>
+<li>Refactor incrementally.</li>
 </ul>
-<p>In the end, your containers will be lighter, faster, and truly production-ready.</p>]]></content:encoded>
+<p>By the end, your containers will be lighter, faster, and truly production-ready.</p>]]></content:encoded>
             <category>docker</category>
             <category>containers</category>
             <category>distroless</category>
