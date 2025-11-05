@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkshekhar_patil_github_io=self.webpackChunkshekhar_patil_github_io||[]).push([[8146],{9328:e=>{e.exports=JSON.parse('{"metadata":{"permalink":"/blog","page":1,"postsPerPage":5,"totalPages":3,"totalCount":15,"nextPage":"/blog/page/2","blogDescription":"Blog","blogTitle":"Blog"}}')}}]);

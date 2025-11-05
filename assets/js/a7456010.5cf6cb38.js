@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkshekhar_patil_github_io=self.webpackChunkshekhar_patil_github_io||[]).push([[1235],{8552:e=>{e.exports=JSON.parse('{"name":"docusaurus-plugin-content-pages","id":"default"}')}}]);
