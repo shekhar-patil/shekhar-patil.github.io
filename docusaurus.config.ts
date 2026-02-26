@@ -112,14 +112,14 @@ const config: Config = {
       tagName: 'meta',
       attributes: {
         property: 'og:image',
-        content: 'https://shekharpatil.tech/img/profile.png',
+        content: 'https://shekhar-patil.github.io/img/profile.png',
       },
     },
     {
       tagName: 'meta',
       attributes: {
         property: 'og:url',
-        content: 'https://shekharpatil.tech',
+        content: 'https://shekhar-patil.github.io',
       },
     },
     {
@@ -147,7 +147,7 @@ const config: Config = {
       tagName: 'meta',
       attributes: {
         name: 'twitter:image',
-        content: 'https://shekharpatil.tech/img/profile.png',
+        content: 'https://shekhar-patil.github.io/img/profile.png',
       },
     },
     {
@@ -159,8 +159,8 @@ const config: Config = {
         '@context': 'https://schema.org',
         '@type': 'Person',
         name: 'Shekhar Patil',
-        url: 'https://shekharpatil.tech',
-        image: 'https://shekharpatil.tech/img/profile.png',
+        url: 'https://shekhar-patil.github.io',
+        image: 'https://shekhar-patil.github.io/img/profile.png',
         sameAs: [
           'https://github.com/shekhar-patil',
           'https://www.linkedin.com/in/shekhar-patil-834462135/',

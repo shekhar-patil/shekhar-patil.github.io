@@ -33,7 +33,7 @@ export default function About(): JSX.Element {
             </p>
 
             <p>
-              Outside of my professional work, I create educational content on <a href="https://www.shekharpatil.tech" target="_blank" rel="noreferrer" style={{ color: '#3b82f6' }}>shekharpatil.tech</a>, where I share tutorials, insights, and practical guides for developers. I also actively contribute to open source on <a href="https://github.com/shekhar-patil" target="_blank" rel="noreferrer" style={{ color: '#3b82f6' }}>GitHub</a> and share technical thoughts on <a href="https://www.linkedin.com/in/shekhar-patil-834462135/" target="_blank" rel="noreferrer" style={{ color: '#3b82f6' }}>LinkedIn</a>.
+              Outside of my professional work, I create educational content on <a href="https://www.shekhar-patil.github.io" target="_blank" rel="noreferrer" style={{ color: '#3b82f6' }}>shekhar-patil.github.io</a>, where I share tutorials, insights, and practical guides for developers. I also actively contribute to open source on <a href="https://github.com/shekhar-patil" target="_blank" rel="noreferrer" style={{ color: '#3b82f6' }}>GitHub</a> and share technical thoughts on <a href="https://www.linkedin.com/in/shekhar-patil-834462135/" target="_blank" rel="noreferrer" style={{ color: '#3b82f6' }}>LinkedIn</a>.
             </p>
 
             <p>
