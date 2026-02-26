@@ -46,7 +46,7 @@ Only consistent "Hire" or "Strong Hire" ratings lead to an offer.
 ## The Elimination Round
 
 I used the one-month prep time to study hard. I solved over 250 DSA problems, mostly on LeetCode and AlgoExpert. You can see my full preparation here:
-📘 [DSA Roadmap](https://www.shekhar-patil.github.io/docs/data-structures-and-algorithms/dsa-roadmap)
+📘 [DSA Roadmap](https://shekhar-patil.github.io/docs/data-structures-and-algorithms/dsa-roadmap)
 
 The round was a live coding interview with three graph problems, all linked together. I had to solve and code them in a Google Doc.
 
@@ -104,9 +104,9 @@ It was disappointing to hear, especially after coming so far. But I didn’t see
 
 The whole process took almost **3-4 months**, and in that time:
 
-- I moved from **Ruby** to **Golang** (You can start Golang Here https://www.shekhar-patil.github.io/docs/golang/intro)
+- I moved from **Ruby** to **Golang** (You can start Golang Here https://shekhar-patil.github.io/docs/golang/intro)
 - I developed a strong understanding of low level system design and data structures
-- I solved hundreds of problems and built my roadmap here https://www.shekhar-patil.github.io/docs/data-structures-and-algorithms/dsa-roadmap
+- I solved hundreds of problems and built my roadmap here https://shekhar-patil.github.io/docs/data-structures-and-algorithms/dsa-roadmap
 - I learned what top-tier companies really look for: correctness, speed, clarity, and optimality
 
 ---
@@ -132,16 +132,16 @@ I’m not giving up. I’ll reapply in a year. Till then, I’m focused on:
 
 If you're preparing for Google or any FAANG interview, check out my:
 
-- 📘 [DSA Roadmap](https://www.shekhar-patil.github.io/docs/data-structures-and-algorithms/dsa-roadmap)
-- ✍️ [All My Blogs](https://www.shekhar-patil.github.io/blog)
+- 📘 [DSA Roadmap](https://shekhar-patil.github.io/docs/data-structures-and-algorithms/dsa-roadmap)
+- ✍️ [All My Blogs](https://shekhar-patil.github.io/blog)
 
 ---
 
 ## 🌐 Explore More
 
-- 🧑‍💻 [My Website & Projects](https://www.shekhar-patil.github.io)
-- 📚 [Golang Learning Path](https://www.shekhar-patil.github.io/docs/golang/intro)
-- 🧠 [DSA Roadmap](https://www.shekhar-patil.github.io/docs/data-structures-and-algorithms/dsa-roadmap)
+- 🧑‍💻 [My Website & Projects](https://shekhar-patil.github.io)
+- 📚 [Golang Learning Path](https://shekhar-patil.github.io/docs/golang/intro)
+- 🧠 [DSA Roadmap](https://shekhar-patil.github.io/docs/data-structures-and-algorithms/dsa-roadmap)
 
 ---
 
