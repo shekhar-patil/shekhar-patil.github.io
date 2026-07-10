@@ -1,99 +1,101 @@
 import React from 'react';
-import clsx from 'clsx';
-import styles from './styles.module.css';
-import pngImage from '@site/static/img/dashboard.png';
-import blogList from '@site/src/data/blogList';
 import Link from '@docusaurus/Link';
+import {usePluginData} from '@docusaurus/useGlobalData';
+import styles from './styles.module.css';
+
+type BlogPost = {title: string; date: string; permalink: string};
+
+const features = [
+  {
+    icon: '⚙️',
+    title: 'Golang Tutorials',
+    description: 'From goroutines to production patterns — deep dives into Go.',
+    href: '/docs/golang/intro',
+  },
+  {
+    icon: '🧠',
+    title: 'Data Structures & Algorithms',
+    description: 'Practical DSA with real interview problems and explanations.',
+    href: '/docs/data-structures-and-algorithms/dsa-roadmap',
+  },
+  {
+    icon: '✍️',
+    title: 'Blog',
+    description: 'Thoughts on backend engineering, cloud, and open source.',
+    href: '/blog',
+  },
+];
 
 export default function HomepageFeatures() {
-  const latestPosts = blogList.slice(0, 6);
-
-  // Only show featured blogs (manually selected)
-  const featuredPosts = [
-    blogList[0], // Most recent
-    blogList[1], // Second most recent
-    blogList[2], // Third most recent
-    blogList[3],
-    blogList[4],
-  ]; // Replace with any specific posts you want to feature
+  const {posts} = usePluginData('recent-blog-posts-plugin') as {posts: BlogPost[]};
+  const recentPosts = (posts ?? []).slice(0, 4);
 
   return (
-    <div className={styles.container}>
-      {/* Hero Section */}
-      <section className={styles.welcomeSection}>
-        <div className={styles.contentWrapper}>
-          <div className={styles.heroContent}>
-            <div className={styles.textContainer}>
-              <h1 className={styles.welcomeText}>
-                Welcome to <span className={styles.shekharText}>Shekhar's</span> Channel
-              </h1>
-              <p className={styles.descriptionText}>
-                Senior Software Engineer based in Pune with 7+ years of experience in Golang, Docker, Kubernetes, and Ruby.
-                Contributor to open-source projects like Rails, Rubocop & swagger-ui-engine. I share technical tutorials, blogs, and dev tools.
-              </p>
-              <div className={styles.linkRow}>
-                <a href="https://github.com/shekhar-patil" target="_blank" rel="noreferrer" className={styles.socialButton}>GitHub</a>
-                <a href="https://www.linkedin.com/in/shekhar-patil-834462135/" target="_blank" rel="noreferrer" className={styles.socialButton}>LinkedIn</a>
-                <a href="/blog" className={styles.socialButton}>My Blog</a>
-              </div>
+    <div className={styles.page}>
+
+      {/* ── Hero ── */}
+      <section className={styles.hero}>
+        <div className={styles.heroInner}>
+          <div className={styles.heroText}>
+            <p className={styles.heroEyebrow}>Hey, I'm</p>
+            <h1 className={styles.heroName}>Shekhar Patil</h1>
+            <p className={styles.heroBio}>
+              Senior Software Engineer with 7+ years of experience in Go, Ruby on Rails,
+              Docker, and Kubernetes. Open-source contributor to Rails, Rubocop, and
+              swagger-ui-engine. I write about backend engineering, distributed systems,
+              and cloud infrastructure.
+            </p>
+            <div className={styles.heroActions}>
+              <Link to="/blog" className={styles.btnPrimary}>Read the Blog</Link>
+              <a href="https://github.com/shekhar-patil" target="_blank" rel="noreferrer" className={styles.btnGhost}>GitHub</a>
+              <a href="https://www.linkedin.com/in/shekhar-patil-834462135/" target="_blank" rel="noreferrer" className={styles.btnGhost}>LinkedIn</a>
             </div>
-            <div className={styles.imageContainer}>
-              <img src={pngImage} className={styles.pngImage} alt="Dashboard" />
-            </div>
+          </div>
+          <div className={styles.heroImageWrap}>
+            <img src="/img/profile.png" alt="Shekhar Patil" className={styles.heroImage} />
           </div>
         </div>
       </section>
 
-      {/* Quick Links */}
-      <section className={styles.quickLinksSection}>
-        <div className={styles.contentWrapper}>
-          <h2 className={styles.sectionTitle}>Explore My Content</h2>
-          <div className={styles.quickLinksGrid}>
-            <a href="/docs/golang/intro" className={styles.quickLinkCard}>
-              <div className={styles.cardIcon}>🚀</div>
-              <h3>Golang Tutorials</h3>
-              <p>Learn Go programming from basics to advanced concepts.</p>
-            </a>
-            <a href="/docs/data-structures-and-algorithms/dsa-roadmap" className={styles.quickLinkCard}>
-              <div className={styles.cardIcon}>💻</div>
-              <h3>Data Structures & Algorithms</h3>
-              <p>Comprehensive guide to DSA concepts and problem-solving.</p>
-            </a>
-            <a href="/blog" className={styles.quickLinkCard}>
-              <div className={styles.cardIcon}>📝</div>
-              <h3>Blog Posts</h3>
-              <p>Insights, tutorials, and tech articles.</p>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Blogs */}
-      {featuredPosts.length > 0 && (
-        <section className={styles.blogSection}>
-          <div className={styles.contentWrapper}>
-            <h2 className={styles.sectionTitle}>Featured Blog Posts</h2>
-            <ul className={styles.latestBlogList} style={{listStyleType: 'disc', listStylePosition: 'outside', paddingLeft: 32, margin: 0}}>
-              {featuredPosts.map((post, idx) => (
-                <li key={idx} className={styles.blogItem} style={{display: 'list-item', alignItems: 'center', padding: 0, margin: 0, position: 'relative', listStyleType: 'disc', listStylePosition: 'outside'}}>
-                  <span style={{display: 'inline-block', minWidth: 120, fontVariantNumeric: 'tabular-nums', marginLeft: 0, textAlign: 'left'}}>
-                    {new Date(post.date).toLocaleDateString('en-IN', {
-                      year: 'numeric',
-                      month: 'short',
-                      day: '2-digit',
-                    })}
-                  </span>
-                  <span style={{margin: '0 1.2em 0 0.5em'}}>: </span>
-                  <Link to={post.permalink} className={styles.latestBlogLink}>
-                    {post.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <div style={{marginTop: '1.5rem'}}>
-              <Link to="/blog" className={styles.allBlogsLink}>
-                All Blogs &rarr;
+      {/* ── Featured areas ── */}
+      <section className={styles.section}>
+        <div className={styles.inner}>
+          <h2 className={styles.sectionTitle}>Explore</h2>
+          <div className={styles.featureGrid}>
+            {features.map((f) => (
+              <Link key={f.href} to={f.href} className={styles.featureCard}>
+                <span className={styles.featureIcon}>{f.icon}</span>
+                <h3 className={styles.featureTitle}>{f.title}</h3>
+                <p className={styles.featureDesc}>{f.description}</p>
+                <span className={styles.featureArrow}>→</span>
               </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Recent posts ── */}
+      {recentPosts.length > 0 && (
+        <section className={styles.section}>
+          <div className={styles.inner}>
+            <div className={styles.sectionHeader}>
+              <h2 className={styles.sectionTitle}>Recent Posts</h2>
+              <Link to="/blog" className={styles.seeAll}>All posts →</Link>
+            </div>
+            <div className={styles.postGrid}>
+              {recentPosts.map((post) => (
+                <Link key={post.permalink} to={post.permalink} className={styles.postCard}>
+                  <p className={styles.postDate}>
+                    {new Date(post.date).toLocaleDateString('en-US', {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric',
+                    })}
+                  </p>
+                  <h3 className={styles.postTitle}>{post.title}</h3>
+                  <span className={styles.postRead}>Read →</span>
+                </Link>
+              ))}
             </div>
           </div>
         </section>
