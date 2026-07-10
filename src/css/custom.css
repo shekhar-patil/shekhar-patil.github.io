@@ -28,3 +28,117 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+/* Blog list page: reduce post title font size */
+.blog-list-page article h2 {
+  font-size: 1.5rem;
+}
+
+@media (max-width: 576px) {
+  .blog-list-page article h2 {
+    font-size: 1.25rem;
+  }
+}
+
+/* ── Blog post show page: content typography ── */
+.blog-post-page .markdown {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--ifm-font-color-base);
+}
+
+.blog-post-page .markdown p {
+  margin-bottom: 1.4rem;
+}
+
+.blog-post-page .markdown h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.blog-post-page .markdown h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.blog-post-page .markdown h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.blog-post-page .markdown code {
+  font-size: 0.88em;
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  background: var(--ifm-color-emphasis-100);
+}
+
+[data-theme='dark'] .blog-post-page .markdown code {
+  background: var(--ifm-color-emphasis-200);
+}
+
+.blog-post-page .markdown pre {
+  border-radius: 10px;
+  margin: 1.5rem 0;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='dark'] .blog-post-page .markdown pre {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+}
+
+.blog-post-page .markdown blockquote {
+  border-left: 3px solid var(--ifm-color-primary);
+  background: var(--ifm-color-emphasis-100);
+  border-radius: 0 8px 8px 0;
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+  font-style: italic;
+  color: var(--ifm-color-emphasis-700);
+}
+
+[data-theme='dark'] .blog-post-page .markdown blockquote {
+  background: var(--ifm-color-emphasis-200);
+}
+
+.blog-post-page .markdown ul,
+.blog-post-page .markdown ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1.4rem;
+}
+
+.blog-post-page .markdown li {
+  margin-bottom: 0.4rem;
+}
+
+/* Tags footer on post page */
+.blog-post-page .docusaurus-mt-lg {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+}
+
+/* Prev/next paginator */
+.blog-post-page .pagination-nav {
+  margin-top: 2.5rem;
+}
+
+.blog-post-page .pagination-nav__link {
+  border-radius: 10px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.blog-post-page .pagination-nav__link:hover {
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}

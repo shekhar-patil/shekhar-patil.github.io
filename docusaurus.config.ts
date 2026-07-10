@@ -25,6 +25,7 @@ const config: Config = {
   },
 
   plugins: [
+    require('./plugins/recentBlogPosts'),
     [
       '@docusaurus/plugin-google-gtag',
       {
@@ -52,9 +53,8 @@ const config: Config = {
 
         blog: {
           showReadingTime: true,
-          blogSidebarCount: 'ALL',
-          blogSidebarTitle: 'Blogs',
-          postsPerPage: 5,
+          blogSidebarCount: 0,
+          postsPerPage: 6,
           onUntruncatedBlogPosts: 'ignore',
         },
 

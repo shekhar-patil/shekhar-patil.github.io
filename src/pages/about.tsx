@@ -1,58 +1,119 @@
 import React from 'react';
 import Layout from '@theme/Layout';
+import Link from '@docusaurus/Link';
 import styles from './about.module.css';
+
+const skills = [
+  'Golang', 'Ruby on Rails', 'Docker', 'Kubernetes',
+  'PostgreSQL', 'Redis', 'gRPC', 'REST APIs',
+  'GCP', 'CI/CD', 'Linux', 'Open Source',
+];
+
+const openSource = [
+  { name: 'Ruby on Rails', url: 'https://github.com/rails/rails', desc: 'Web application framework' },
+  { name: 'Rubocop', url: 'https://github.com/rubocop/rubocop', desc: 'Ruby static code analyzer' },
+  { name: 'swagger-ui-engine', url: 'https://github.com/zuzannast/swagger_ui_engine', desc: 'Swagger UI for Rails' },
+];
+
+const social = [
+  { label: 'GitHub', href: 'https://github.com/shekhar-patil', icon: '⌥' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/shekhar-patil-834462135/', icon: 'in' },
+  { label: 'Twitter / X', href: 'https://x.com/Shekharpatil95', icon: '𝕏' },
+  { label: 'YouTube', href: 'https://www.youtube.com/@shekharpatil02', icon: '▶' },
+  { label: 'Stack Overflow', href: 'https://stackoverflow.com/users/7292776/shekhar-patil', icon: 'SO' },
+];
 
 export default function About(): JSX.Element {
   return (
     <Layout
       title="About Shekhar Patil"
-      description="Know more about Shekhar Patil - Senior Software Engineer and Open Source Contributor"
+      description="Senior Software Engineer specializing in Golang, Ruby on Rails, Docker and Kubernetes."
     >
       <main className={styles.main}>
-        <div className={styles.container}>
 
-          {/* ✅ TEXT FIRST */}
-          <div className={styles.textColumn}>
-            <h1>Hey, I’m Shekhar Patil</h1>
-            <p className={styles.subtitle}>
-              Full-stack engineer, backend specialist, and open-source contributor.
-            </p>
-
-            <h2>About Me</h2>
-
-            <p>
-              I’m a Senior Software Engineer at <strong>Neurealm</strong>, based in Pune, with over 7 years of experience building scalable backend systems, crafting developer tools, and deploying modern infrastructure. My work revolves around creating clean, maintainable software that solves complex problems efficiently.
-            </p>
-
-            <p>
-              My core expertise lies in <strong>Golang, Docker, Kubernetes, and Ruby</strong>. These technologies empower me to develop robust backend services, manage containerized applications, and contribute to developer productivity. Over the years, I have developed a deep passion for backend engineering and infrastructure automation.
-            </p>
-
-            <p>
-              I have contributed to popular open-source projects like <strong>Ruby on Rails</strong>, <strong>Rubocop</strong>, and <strong>swagger-ui-engine</strong>. Contributing to the open-source community helps me stay at the forefront of technology while advocating for clean code, performance optimization, and system reliability.
-            </p>
-
-            <p>
-              Outside of my professional work, I create educational content on <a href="https://shekhar-patil.github.io" target="_blank" rel="noreferrer" style={{ color: '#3b82f6' }}>shekhar-patil.github.io</a>, where I share tutorials, insights, and practical guides for developers. I also actively contribute to open source on <a href="https://github.com/shekhar-patil" target="_blank" rel="noreferrer" style={{ color: '#3b82f6' }}>GitHub</a> and share technical thoughts on <a href="https://www.linkedin.com/in/shekhar-patil-834462135/" target="_blank" rel="noreferrer" style={{ color: '#3b82f6' }}>LinkedIn</a>.
-            </p>
-
-            <p>
-              My goal is to empower engineers by breaking down complex backend concepts into practical, easy-to-understand ideas that help build meaningful, scalable, and impactful software.
-            </p>
-
-            <h2>Connect with Me</h2>
-            <div className={styles.socialLinks}>
-              <a href="https://github.com/shekhar-patil" target="_blank" rel="noopener noreferrer">GitHub</a>
-              <a href="https://www.linkedin.com/in/shekhar-patil-834462135/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-              <a href="https://x.com/Shekharpatil95" target="_blank" rel="noopener noreferrer">Twitter</a>
-              <a href="https://www.youtube.com/@shekharpatil02" target="_blank" rel="noopener noreferrer">YouTube</a>
+        {/* ── Hero ── */}
+        <section className={styles.hero}>
+          <div className={styles.heroInner}>
+            <div className={styles.heroText}>
+              <p className={styles.eyebrow}>About me</p>
+              <h1 className={styles.name}>Shekhar Patil</h1>
+              <p className={styles.role}>Technical Lead at Neurealm · Pune, India</p>
+              <p className={styles.bio}>
+                Backend specialist with 7+ years building scalable systems in Go and Ruby.
+                Open-source contributor, technical writer, and engineer who cares about clean,
+                maintainable code that makes an impact.
+              </p>
+              <div className={styles.heroActions}>
+                <Link to="/blog" className={styles.btnPrimary}>Read the Blog</Link>
+                <a href="https://calendly.com/shekhar-patil" target="_blank" rel="noreferrer" className={styles.btnGhost}>Schedule a Call</a>
+              </div>
+            </div>
+            <div className={styles.heroPhoto}>
+              <img src="/img/profile.png" alt="Shekhar Patil" className={styles.photo} />
             </div>
           </div>
+        </section>
 
-          {/* ✅ IMAGE ON RIGHT (ON DESKTOP) */}
-          <div className={styles.photoColumn}>
-            <img src="/img/profile.png" alt="Shekhar Patil" />
-          </div>
+        <div className={styles.content}>
+
+          {/* ── Story ── */}
+          <section className={styles.section}>
+            <h2 className={styles.sectionTitle}>My Story</h2>
+            <div className={styles.prose}>
+              <p>
+                I'm a Technical Lead at <strong>Neurealm</strong>, building distributed backend
+                systems and infrastructure tooling. My work revolves around Go, Ruby on Rails, Docker,
+                and Kubernetes — technologies I use daily to build reliable, high-throughput services.
+              </p>
+              <p>
+                Over the years I've developed a deep passion for backend engineering and infrastructure
+                automation. I believe great software is as much about developer experience as user experience —
+                clean APIs, readable code, and thoughtful architecture compound over time.
+              </p>
+              <p>
+                Outside of work, I create educational content, contribute to open source, and share what
+                I learn so other engineers can grow faster than I did.
+              </p>
+            </div>
+          </section>
+
+          {/* ── Skills ── */}
+          <section className={styles.section}>
+            <h2 className={styles.sectionTitle}>Skills & Technologies</h2>
+            <div className={styles.skillGrid}>
+              {skills.map((s) => (
+                <span key={s} className={styles.skill}>{s}</span>
+              ))}
+            </div>
+          </section>
+
+          {/* ── Open Source ── */}
+          <section className={styles.section}>
+            <h2 className={styles.sectionTitle}>Open Source Contributions</h2>
+            <div className={styles.ossGrid}>
+              {openSource.map((p) => (
+                <a key={p.name} href={p.url} target="_blank" rel="noreferrer" className={styles.ossCard}>
+                  <span className={styles.ossName}>{p.name}</span>
+                  <span className={styles.ossDesc}>{p.desc}</span>
+                  <span className={styles.ossArrow}>↗</span>
+                </a>
+              ))}
+            </div>
+          </section>
+
+          {/* ── Connect ── */}
+          <section className={styles.section}>
+            <h2 className={styles.sectionTitle}>Connect</h2>
+            <div className={styles.socialGrid}>
+              {social.map((s) => (
+                <a key={s.label} href={s.href} target="_blank" rel="noreferrer" className={styles.socialCard}>
+                  <span className={styles.socialIcon}>{s.icon}</span>
+                  <span className={styles.socialLabel}>{s.label}</span>
+                </a>
+              ))}
+            </div>
+          </section>
+
         </div>
       </main>
     </Layout>
