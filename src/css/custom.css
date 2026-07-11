@@ -204,6 +204,7 @@ thead tr {
 .blog-post-page .markdown pre {
   border-radius: 10px;
   margin: 1.5rem 0;
+  padding: 1.25rem 1.5rem;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 }
 
@@ -256,4 +257,57 @@ thead tr {
 .blog-post-page .pagination-nav__link:hover {
   border-color: var(--ifm-color-primary);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* ── Code blocks: global ── */
+.theme-code-block {
+  border-radius: 12px !important;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin: 1.5rem 0;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+[data-theme='dark'] .theme-code-block {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+/* macOS-style dots header bar */
+.theme-code-block::before {
+  content: '';
+  display: flex;
+  height: 40px;
+  background: #e8e8e8;
+  background-image:
+    radial-gradient(circle, #ff5f57 6px, transparent 6px),
+    radial-gradient(circle, #febc2e 6px, transparent 6px),
+    radial-gradient(circle, #28c840 6px, transparent 6px);
+  background-repeat: no-repeat;
+  background-size: 12px 12px, 12px 12px, 12px 12px;
+  background-position: 16px center, 36px center, 56px center;
+  border-bottom: 1px solid #d0d0d0;
+}
+
+[data-theme='dark'] .theme-code-block::before {
+  background-color: #282c34;
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Code content padding */
+.theme-code-block pre {
+  border-radius: 0 !important;
+  margin: 0 !important;
+  padding: 1.25rem 1.5rem !important;
+  font-size: 0.88rem !important;
+  line-height: 1.65 !important;
+}
+
+/* Scrollbar inside code blocks */
+.theme-code-block pre::-webkit-scrollbar {
+  height: 4px;
+}
+.theme-code-block pre::-webkit-scrollbar-thumb {
+  background: rgba(128, 128, 128, 0.3);
+  border-radius: 99px;
 }

@@ -199,4 +199,3 @@ If you’re planning to go distroless:
 * Refactor incrementally.
 
 By the end, your containers will be lighter, faster, and truly production-ready.
-
