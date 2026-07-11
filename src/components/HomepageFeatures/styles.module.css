@@ -1,6 +1,4 @@
-.page {
-  font-family: var(--ifm-font-family-base);
-}
+.page {}
 
 /* ── Shared layout ── */
 .inner {

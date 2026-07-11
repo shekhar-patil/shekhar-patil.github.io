@@ -1,11 +1,11 @@
-/**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
- */
-
-/* You can override the default Infima variables here. */
+/* ── Root variables ── */
 :root {
+  /* Font */
+  --ifm-font-family-base: 'Inter', system-ui, -apple-system, sans-serif;
+  --ifm-font-family-monospace: 'JetBrains Mono', 'SFMono-Regular', Menlo, Monaco, Consolas, monospace;
+  --ifm-heading-font-family: 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Primary colour (green) */
   --ifm-color-primary: #2e8555;
   --ifm-color-primary-dark: #29784c;
   --ifm-color-primary-darker: #277148;
@@ -13,11 +13,21 @@
   --ifm-color-primary-light: #33925d;
   --ifm-color-primary-lighter: #359962;
   --ifm-color-primary-lightest: #3cad6e;
-  --ifm-code-font-size: 95%;
+
+  /* Code */
+  --ifm-code-font-size: 90%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+  /* Typography */
+  --ifm-font-size-base: 16px;
+  --ifm-line-height-base: 1.7;
+  --ifm-global-radius: 8px;
+
+  /* Navbar */
+  --ifm-navbar-height: 60px;
+  --ifm-navbar-shadow: 0 1px 0 var(--ifm-color-emphasis-200);
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
   --ifm-color-primary: #25c2a0;
   --ifm-color-primary-dark: #21af90;
@@ -27,20 +37,125 @@
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-navbar-shadow: 0 1px 0 var(--ifm-color-emphasis-200);
 }
 
-/* Blog list page: reduce post title font size */
+/* ── Global base ── */
+html {
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--ifm-color-primary-lightest);
+  color: var(--ifm-color-primary-darkest);
+}
+
+[data-theme='dark'] ::selection {
+  background: var(--ifm-color-primary-darkest);
+  color: var(--ifm-color-primary-lightest);
+}
+
+/* ── Scrollbar (webkit) ── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: var(--ifm-color-emphasis-300);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ifm-color-emphasis-500);
+}
+
+/* ── Navbar ── */
+.navbar {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background: rgba(var(--ifm-background-color-rgb, 255 255 255), 0.85);
+}
+
+[data-theme='dark'] .navbar {
+  background: rgba(24, 25, 26, 0.85);
+}
+
+.navbar__title {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.navbar__link {
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: color 0.15s ease;
+}
+
+.navbar__logo {
+  border-radius: 50%;
+}
+
+/* ── Footer ── */
+.footer {
+  font-size: 0.88rem;
+}
+
+.footer__title {
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+/* ── Global link style ── */
+a {
+  transition: color 0.15s ease;
+}
+
+/* ── Headings: tighter tracking ── */
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+/* ── Docs sidebar ── */
+.menu__link {
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 6px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.menu__link--active {
+  font-weight: 600;
+}
+
+/* ── Tables ── */
+table {
+  font-size: 0.9rem;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+thead tr {
+  background: var(--ifm-color-emphasis-100);
+}
+
+/* ── Blog list page ── */
 .blog-list-page article h2 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 @media (max-width: 576px) {
   .blog-list-page article h2 {
-    font-size: 1.25rem;
+    font-size: 1.05rem;
   }
 }
 
-/* ── Blog post show page: content typography ── */
+/* ── Blog post page: content typography ── */
 .blog-post-page .markdown {
   font-size: 1.05rem;
   line-height: 1.8;

@@ -1,0 +1,160 @@
+.footer {
+  background: #1e2028;
+  color: #a1a1aa;
+  padding: 4rem 1.5rem 0;
+  font-size: 0.9rem;
+}
+
+[data-theme='light'] .footer {
+  background: #1e2028;
+}
+
+.inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ── Top row ── */
+.top {
+  display: flex;
+  gap: 4rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ── Brand ── */
+.brand {
+  flex: 1.5;
+  min-width: 0;
+}
+
+.brandName {
+  display: inline-block;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.01em;
+}
+
+.brandName:hover {
+  color: var(--ifm-color-primary-light);
+  text-decoration: none;
+}
+
+.brandBio {
+  font-size: 0.88rem;
+  color: #71717a;
+  line-height: 1.65;
+  max-width: 360px;
+  margin: 0 0 1.5rem;
+}
+
+.socials {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.socialIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  color: #71717a;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: color 0.15s ease, background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+  text-decoration: none;
+}
+
+.socialIcon:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+/* ── Nav ── */
+.nav {
+  flex: 1;
+}
+
+.navTitle {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #52525b;
+  margin: 0 0 1rem;
+}
+
+.navList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.navLink {
+  color: #71717a;
+  text-decoration: none;
+  font-size: 0.88rem;
+  transition: color 0.15s ease;
+}
+
+.navLink:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* ── Bottom bar ── */
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 0;
+  font-size: 0.8rem;
+  color: #52525b;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.bottomRight {
+  color: #52525b;
+}
+
+.docLink {
+  color: #71717a;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.docLink:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .top {
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .brandBio {
+    max-width: 100%;
+  }
+
+  .bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+}
