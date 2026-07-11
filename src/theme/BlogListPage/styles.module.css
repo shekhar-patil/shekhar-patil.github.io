@@ -13,7 +13,7 @@
 
 .blogSubtitle {
   font-size: 1rem;
-  color: var(--ifm-color-emphasis-600);
+  color: var(--ifm-color-emphasis-800);
   margin: 0;
 }
 
@@ -90,12 +90,12 @@
 
 .cardDate {
   font-size: 0.8rem;
-  color: var(--ifm-color-emphasis-600);
+  color: var(--ifm-color-emphasis-800);
 }
 
 .cardReadTime {
   font-size: 0.8rem;
-  color: var(--ifm-color-emphasis-500);
+  color: var(--ifm-color-emphasis-700);
 }
 
 .cardReadTime::before {
