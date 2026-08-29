@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://shekhar-patil.github.io/blog</id>
     <title>Shekhar Patil - Full Stack Developer Blog</title>
-    <updated>2026-08-14T00:00:00.000Z</updated>
+    <updated>2026-08-29T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://shekhar-patil.github.io/blog"/>
     <subtitle>Shekhar Patil - Full Stack Developer Blog</subtitle>
@@ -11,7 +11,7 @@
         <title type="html"><![CDATA[Semaphores for Concurrency Control in Golang — A Practical Example]]></title>
         <id>https://shekhar-patil.github.io/blog/semaphores-for-concurrency-control-in-golang</id>
         <link href="https://shekhar-patil.github.io/blog/semaphores-for-concurrency-control-in-golang"/>
-        <updated>2026-08-14T00:00:00.000Z</updated>
+        <updated>2026-08-29T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Understand semaphores through a practical Go example, build one using buffered channels, and see when to use x/sync/semaphore.]]></summary>
         <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="what-is-a-semaphore">What is a Semaphore?<a href="https://shekhar-patil.github.io/blog/semaphores-for-concurrency-control-in-golang#what-is-a-semaphore" class="hash-link" aria-label="Direct link to What is a Semaphore?" title="Direct link to What is a Semaphore?">​</a></h2>
 <p>A semaphore is a concurrency-control mechanism that limits how many goroutines can access a resource or perform an operation at the same time.</p>

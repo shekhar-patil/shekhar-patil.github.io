@@ -4,7 +4,7 @@
         <title>Shekhar Patil - Full Stack Developer Blog</title>
         <link>https://shekhar-patil.github.io/blog</link>
         <description>Shekhar Patil - Full Stack Developer Blog</description>
-        <lastBuildDate>Fri, 14 Aug 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 29 Aug 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
@@ -12,7 +12,7 @@
             <title><![CDATA[Semaphores for Concurrency Control in Golang — A Practical Example]]></title>
             <link>https://shekhar-patil.github.io/blog/semaphores-for-concurrency-control-in-golang</link>
             <guid>https://shekhar-patil.github.io/blog/semaphores-for-concurrency-control-in-golang</guid>
-            <pubDate>Fri, 14 Aug 2026 00:00:00 GMT</pubDate>
+            <pubDate>Sat, 29 Aug 2026 00:00:00 GMT</pubDate>
             <description><![CDATA[Understand semaphores through a practical Go example, build one using buffered channels, and see when to use x/sync/semaphore.]]></description>
             <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="what-is-a-semaphore">What is a Semaphore?<a href="https://shekhar-patil.github.io/blog/semaphores-for-concurrency-control-in-golang#what-is-a-semaphore" class="hash-link" aria-label="Direct link to What is a Semaphore?" title="Direct link to What is a Semaphore?">​</a></h2>
 <p>A semaphore is a concurrency-control mechanism that limits how many goroutines can access a resource or perform an operation at the same time.</p>
