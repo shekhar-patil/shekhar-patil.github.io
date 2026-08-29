@@ -4,7 +4,7 @@ slug: semaphores-for-concurrency-control-in-golang
 title: "Semaphores for Concurrency Control in Golang — A Practical Example"
 description: "Understand semaphores through a practical Go example, build one using buffered channels, and see when to use x/sync/semaphore."
 tags: [golang, concurrency, semaphore]
-date: 2026-08-14
+date: 2026-08-29
 authors: shekhar-patil
 ----------------------
 
