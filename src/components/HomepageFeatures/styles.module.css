@@ -137,12 +137,8 @@
 }
 
 .heroImage {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
+  width: 400px;
   object-fit: cover;
-  border: 3px solid var(--ifm-color-emphasis-200);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 /* ── Feature cards ── */
@@ -302,8 +298,7 @@
   }
 
   .heroImage {
-    width: 140px;
-    height: 140px;
+    width: 250px;
   }
 
   .postGrid {

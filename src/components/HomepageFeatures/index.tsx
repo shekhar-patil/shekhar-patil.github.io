@@ -52,7 +52,7 @@ export default function HomepageFeatures() {
             </div>
           </div>
           <div className={styles.heroImageWrap}>
-            <img src="/img/profile.png" alt="Shekhar Patil" className={styles.heroImage} />
+            <img src="/img/profile-background-removed.png" alt="Shekhar Patil" className={styles.heroImage} />
           </div>
         </div>
       </section>
