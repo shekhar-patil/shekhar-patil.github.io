@@ -40,7 +40,7 @@ export default function HomepageFeatures() {
             <p className={styles.heroEyebrow}>Hey, I'm</p>
             <h1 className={styles.heroName}>Shekhar Patil</h1>
             <p className={styles.heroBio}>
-              Senior Software Engineer with 7+ years of experience in Go, Ruby on Rails,
+              Senior Software Engineer with 8+ years of experience in Go, Ruby on Rails,
               Docker, and Kubernetes. Open-source contributor to Rails, Rubocop, and
               swagger-ui-engine. I write about backend engineering, distributed systems,
               and cloud infrastructure.

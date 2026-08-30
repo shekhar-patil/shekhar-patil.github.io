@@ -39,7 +39,7 @@ export default function About(): JSX.Element {
               <h1 className={styles.name}>Shekhar Patil</h1>
               <p className={styles.role}>Technical Lead at Neurealm · Pune, India</p>
               <p className={styles.bio}>
-                Backend specialist with 7+ years building scalable systems in Go and Ruby.
+                Backend specialist with 8+ years building scalable systems in Go and Ruby.
                 Open-source contributor, technical writer, and engineer who cares about clean,
                 maintainable code that makes an impact.
               </p>
@@ -49,7 +49,7 @@ export default function About(): JSX.Element {
               </div>
             </div>
             <div className={styles.heroPhoto}>
-              <img src="/img/profile.png" alt="Shekhar Patil" className={styles.photo} />
+              <img src="/img/profile-background-removed.png" alt="Shekhar Patil" className={styles.photo} />
             </div>
           </div>
         </section>

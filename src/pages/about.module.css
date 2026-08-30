@@ -100,12 +100,8 @@
 }
 
 .photo {
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
+  width: 400px;
   object-fit: cover;
-  border: 3px solid var(--ifm-color-emphasis-200);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
 }
 
 /* ── Shared content wrapper ── */
@@ -307,8 +303,7 @@
   }
 
   .photo {
-    width: 150px;
-    height: 150px;
+    width: 250px;
   }
 
   .ossGrid {
